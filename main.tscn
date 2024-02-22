@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmswjmrkgrc7j"]
+[gd_scene load_steps=3 format=3 uid="uid://dmswjmrkgrc7j"]
 
 [ext_resource type="Texture2D" uid="uid://7mwuqbi3ykln" path="res://Free/Background/Green.png" id="1_td344"]
+[ext_resource type="Texture2D" uid="uid://c341fhqfs4aa8" path="res://guns_gameassets/PNG/medium_bullet.png" id="2_7p7ro"]
 
 [node name="main" type="Node2D"]
 
@@ -48,3 +49,8 @@ text = "Quit
 "
 icon_alignment = 1
 expand_icon = true
+
+[node name="MediumBullet" type="Sprite2D" parent="."]
+position = Vector2(288, 219)
+scale = Vector2(7.5, 4.62069)
+texture = ExtResource("2_7p7ro")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmswjmrkgrc7j"]
+[gd_scene load_steps=4 format=3 uid="uid://dmswjmrkgrc7j"]
 
 [ext_resource type="Texture2D" uid="uid://7mwuqbi3ykln" path="res://Free/Background/Green.png" id="1_td344"]
 [ext_resource type="Texture2D" uid="uid://c341fhqfs4aa8" path="res://guns_gameassets/PNG/medium_bullet.png" id="2_7p7ro"]
+[ext_resource type="Texture2D" uid="uid://cnxt3tg44ic0j" path="res://guns_gameassets/PNG higher resolution (@2x)/smg2.png" id="3_eqetl"]
 
 [node name="main" type="Node2D"]
 
@@ -54,3 +55,8 @@ expand_icon = true
 position = Vector2(288, 219)
 scale = Vector2(7.5, 4.62069)
 texture = ExtResource("2_7p7ro")
+
+[node name="Smg2" type="Sprite2D" parent="."]
+position = Vector2(963, 316)
+scale = Vector2(0.616314, 0.658333)
+texture = ExtResource("3_eqetl")

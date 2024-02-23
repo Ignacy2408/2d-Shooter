@@ -17,33 +17,33 @@ texture = ExtResource("1_td344")
 stretch_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="PlayButton" type="Button" parent="."]
+[node name="PlayButton" type="Button" parent="TextureRect"]
 texture_filter = 1
 offset_left = 460.0
-offset_top = 125.0
+offset_top = 127.0
 offset_right = 715.0
-offset_bottom = 232.0
+offset_bottom = 234.0
 text = "Play"
 icon_alignment = 1
 expand_icon = true
 
-[node name="SettingsButton" type="Button" parent="."]
+[node name="SettingsButton" type="Button" parent="TextureRect"]
 texture_filter = 1
 offset_left = 460.0
-offset_top = 286.0
+offset_top = 288.0
 offset_right = 711.0
-offset_bottom = 389.0
+offset_bottom = 391.0
 text = "Settings
 "
 icon_alignment = 1
 expand_icon = true
 
-[node name="QuitButton" type="Button" parent="."]
+[node name="QuitButton" type="Button" parent="TextureRect"]
 texture_filter = 1
 offset_left = 459.0
-offset_top = 453.0
+offset_top = 455.0
 offset_right = 716.0
-offset_bottom = 560.0
+offset_bottom = 562.0
 text = "Quit
 "
 icon_alignment = 1

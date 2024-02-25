@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://deuv5ay7440ah"]
+[gd_scene load_steps=10 format=3 uid="uid://deuv5ay7440ah"]
 
 [ext_resource type="Texture2D" uid="uid://bmdxev7xx2ros" path="res://backgrounds/dark background.png" id="1_ho5eh"]
+[ext_resource type="Script" path="res://scenes/map_1.gd" id="1_qtthi"]
 [ext_resource type="Texture2D" uid="uid://brn2ofsekx7ll" path="res://Free/Terrain/Terrain (16x16).png" id="2_wrwi4"]
+[ext_resource type="PackedScene" uid="uid://btki6gx4eneyb" path="res://scenes/gun_box.tscn" id="3_8k74w"]
 [ext_resource type="PackedScene" uid="uid://dokq2dxwaavcg" path="res://scenes/Player1.tscn" id="3_ivnla"]
+[ext_resource type="Script" path="res://scenes/gun_box.gd" id="4_227gq"]
+[ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/gun_sniper.tscn" id="4_eybqw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xhn2m"]
 texture = ExtResource("2_wrwi4")
@@ -455,11 +459,13 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xhn2m")
 
 [node name="map1" type="Node2D"]
+script = ExtResource("1_qtthi")
 
 [node name="DarkBackground" type="Sprite2D" parent="."]
 position = Vector2(580, 348)
 scale = Vector2(0.778667, 0.715151)
 texture = ExtResource("1_ho5eh")
+metadata/_edit_lock_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -468,5 +474,12 @@ tile_set = SubResource("TileSet_tb26o")
 format = 2
 layer_0/tile_data = PackedInt32Array(327689, 786432, 4, 327694, 917504, 4, 524304, 917504, 4, 524295, 786432, 4, 524296, 851968, 4, 524297, 851968, 4, 524298, 851968, 4, 524299, 851968, 4, 524300, 851968, 4, 524301, 851968, 4, 524302, 851968, 4, 524303, 851968, 4, 327690, 851968, 4, 327691, 851968, 4, 327692, 851968, 4, 327693, 851968, 4, 196613, 917504, 4, 196626, 786432, 4, 196609, 786432, 4, 196630, 917504, 4, 196610, 851968, 4, 196611, 851968, 4, 196612, 851968, 4, 196629, 851968, 4, 196628, 851968, 4, 196627, 851968, 4, 655362, 786432, 4, 655378, 786432, 4, 655365, 917504, 4, 655381, 917504, 4, 655363, 851968, 4, 655364, 851968, 4, 655379, 851968, 4, 655380, 851968, 4)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_ivnla")]
-position = Vector2(-13, 41)
+[node name="GunBox" parent="." instance=ExtResource("3_8k74w")]
+script = ExtResource("4_227gq")
+
+[node name="Player1" parent="." instance=ExtResource("3_ivnla")]
+position = Vector2(577, 7)
+
+[node name="GunSniper" parent="." instance=ExtResource("4_eybqw")]
+
+[connection signal="body_entered" from="GunBox" to="GunBox" method="_on_body_entered"]

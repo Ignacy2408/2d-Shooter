@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://btki6gx4eneyb"]
+
+[ext_resource type="Texture2D" uid="uid://t7030cv634ok" path="res://Free/Items/Boxes/Box1/Idle.png" id="1_pav1t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdej2"]
+size = Vector2(30, 30)
+
+[node name="GunBox" type="Area2D"]
+position = Vector2(157, 128)
+metadata/_edit_group_ = true
+
+[node name="BoxGraphic" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("1_pav1t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tdej2")

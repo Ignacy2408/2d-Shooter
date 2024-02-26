@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://deuv5ay7440ah"]
+[gd_scene load_steps=11 format=3 uid="uid://deuv5ay7440ah"]
 
 [ext_resource type="Texture2D" uid="uid://bmdxev7xx2ros" path="res://backgrounds/dark background.png" id="1_ho5eh"]
 [ext_resource type="Script" path="res://scenes/map_1.gd" id="1_qtthi"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://btki6gx4eneyb" path="res://scenes/gun_box.tscn" id="3_8k74w"]
 [ext_resource type="PackedScene" uid="uid://dokq2dxwaavcg" path="res://scenes/Player1.tscn" id="3_ivnla"]
 [ext_resource type="Script" path="res://scenes/gun_box.gd" id="4_227gq"]
-[ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/gun_sniper.tscn" id="4_eybqw"]
+[ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/guns.tscn" id="4_eybqw"]
+[ext_resource type="PackedScene" uid="uid://b5lq3k1mea4rh" path="res://scenes/Player2.tscn" id="8_kgnnq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xhn2m"]
 texture = ExtResource("2_wrwi4")
@@ -483,5 +484,8 @@ position = Vector2(577, 7)
 
 [node name="GunSniper" parent="." instance=ExtResource("4_eybqw")]
 visible = false
+
+[node name="Player2" parent="." instance=ExtResource("8_kgnnq")]
+position = Vector2(504, 169)
 
 [connection signal="body_entered" from="GunBox" to="GunBox" method="_on_body_entered"]

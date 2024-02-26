@@ -478,8 +478,10 @@ layer_0/tile_data = PackedInt32Array(327689, 786432, 4, 327694, 917504, 4, 52430
 script = ExtResource("4_227gq")
 
 [node name="Player1" parent="." instance=ExtResource("3_ivnla")]
+texture_filter = 1
 position = Vector2(577, 7)
 
 [node name="GunSniper" parent="." instance=ExtResource("4_eybqw")]
+visible = false
 
 [connection signal="body_entered" from="GunBox" to="GunBox" method="_on_body_entered"]

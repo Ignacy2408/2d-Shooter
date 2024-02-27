@@ -51,5 +51,7 @@ func _physics_process(delta):
 func _process(delta):
 	
 	if self.position.y > 670:
-		alive = false
+		GameState.p1alive = false
+		GameState.p1lives -= 1
+		print(GameState.p1lives)
 		queue_free()

@@ -1,16 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://deuv5ay7440ah"]
+[gd_scene load_steps=15 format=3 uid="uid://deuv5ay7440ah"]
 
-[ext_resource type="Texture2D" uid="uid://bmdxev7xx2ros" path="res://backgrounds/dark background.png" id="1_ho5eh"]
-[ext_resource type="Script" path="res://scenes/map_1.gd" id="1_qtthi"]
-[ext_resource type="Texture2D" uid="uid://brn2ofsekx7ll" path="res://Free/Terrain/Terrain (16x16).png" id="2_wrwi4"]
-[ext_resource type="PackedScene" uid="uid://btki6gx4eneyb" path="res://scenes/gun_box.tscn" id="3_8k74w"]
-[ext_resource type="PackedScene" uid="uid://dokq2dxwaavcg" path="res://scenes/Player1.tscn" id="3_ivnla"]
-[ext_resource type="Script" path="res://scenes/gun_box.gd" id="4_227gq"]
-[ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/guns.tscn" id="4_eybqw"]
-[ext_resource type="PackedScene" uid="uid://b5lq3k1mea4rh" path="res://scenes/Player2.tscn" id="8_kgnnq"]
+[ext_resource type="Script" path="res://scenes/maps.gd" id="1_26c4c"]
+[ext_resource type="Script" path="res://scenes/PlayerSpawner.gd" id="1_mbtdp"]
+[ext_resource type="Script" path="res://scenes/map1.gd" id="1_sf4p7"]
+[ext_resource type="Texture2D" uid="uid://bmdxev7xx2ros" path="res://backgrounds/dark background.png" id="2_vduqt"]
+[ext_resource type="Texture2D" uid="uid://brn2ofsekx7ll" path="res://Free/Terrain/Terrain (16x16).png" id="3_oe76e"]
+[ext_resource type="PackedScene" uid="uid://btki6gx4eneyb" path="res://scenes/gun_box.tscn" id="4_fkrp6"]
+[ext_resource type="Script" path="res://scenes/gun_box.gd" id="5_a45gf"]
+[ext_resource type="PackedScene" uid="uid://dokq2dxwaavcg" path="res://scenes/Player1.tscn" id="6_dyrc4"]
+[ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/guns.tscn" id="7_j5a0p"]
+[ext_resource type="PackedScene" uid="uid://b5lq3k1mea4rh" path="res://scenes/Player2.tscn" id="8_rq4or"]
+[ext_resource type="Script" path="res://scenes/Label.gd" id="11_ihox3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xhn2m"]
-texture = ExtResource("2_wrwi4")
+texture = ExtResource("3_oe76e")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -459,33 +462,53 @@ texture = ExtResource("2_wrwi4")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xhn2m")
 
-[node name="map1" type="Node2D"]
-script = ExtResource("1_qtthi")
+[sub_resource type="LabelSettings" id="LabelSettings_1w4at"]
+font_size = 23
 
-[node name="DarkBackground" type="Sprite2D" parent="."]
+[node name="maps" type="Node2D"]
+script = ExtResource("1_26c4c")
+
+[node name="map1" type="Node2D" parent="."]
+script = ExtResource("1_sf4p7")
+
+[node name="DarkBackground" type="Sprite2D" parent="map1"]
 position = Vector2(580, 348)
 scale = Vector2(0.778667, 0.715151)
-texture = ExtResource("1_ho5eh")
+texture = ExtResource("2_vduqt")
 metadata/_edit_lock_ = true
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="map1"]
 texture_filter = 1
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_tb26o")
 format = 2
 layer_0/tile_data = PackedInt32Array(327689, 786432, 4, 327694, 917504, 4, 524304, 917504, 4, 524295, 786432, 4, 524296, 851968, 4, 524297, 851968, 4, 524298, 851968, 4, 524299, 851968, 4, 524300, 851968, 4, 524301, 851968, 4, 524302, 851968, 4, 524303, 851968, 4, 327690, 851968, 4, 327691, 851968, 4, 327692, 851968, 4, 327693, 851968, 4, 196613, 917504, 4, 196626, 786432, 4, 196609, 786432, 4, 196630, 917504, 4, 196610, 851968, 4, 196611, 851968, 4, 196612, 851968, 4, 196629, 851968, 4, 196628, 851968, 4, 196627, 851968, 4, 655362, 786432, 4, 655378, 786432, 4, 655365, 917504, 4, 655381, 917504, 4, 655363, 851968, 4, 655364, 851968, 4, 655379, 851968, 4, 655380, 851968, 4)
 
-[node name="GunBox" parent="." instance=ExtResource("3_8k74w")]
-script = ExtResource("4_227gq")
+[node name="GunBox" parent="map1" instance=ExtResource("4_fkrp6")]
+script = ExtResource("5_a45gf")
 
-[node name="Player1" parent="." instance=ExtResource("3_ivnla")]
+[node name="Player1" parent="map1" instance=ExtResource("6_dyrc4")]
 texture_filter = 1
-position = Vector2(577, 7)
+position = Vector2(577, -59)
 
-[node name="GunSniper" parent="." instance=ExtResource("4_eybqw")]
+[node name="GunSniper" parent="map1" instance=ExtResource("7_j5a0p")]
 visible = false
 
-[node name="Player2" parent="." instance=ExtResource("8_kgnnq")]
+[node name="Player2" parent="map1" instance=ExtResource("8_rq4or")]
 position = Vector2(504, 169)
 
-[connection signal="body_entered" from="GunBox" to="GunBox" method="_on_body_entered"]
+[node name="PlayerSpawner" type="Node2D" parent="."]
+script = ExtResource("1_mbtdp")
+player1_tscn = ExtResource("6_dyrc4")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 22.0
+offset_top = 9.0
+offset_right = 297.0
+offset_bottom = 79.0
+text = "P1 Lives: "
+label_settings = SubResource("LabelSettings_1w4at")
+script = ExtResource("11_ihox3")
+
+[connection signal="body_entered" from="map1/GunBox" to="map1/GunBox" method="_on_body_entered"]

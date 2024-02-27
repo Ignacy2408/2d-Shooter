@@ -5,6 +5,7 @@ const SPEED = 400.0
 const JUMP_VELOCITY = -750.0
 @onready var sprite_2d = $Frog_Character
 @export var changeSpeed = 150
+var alive = true;
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -45,3 +46,10 @@ func _physics_process(delta):
 		sprite_2d.flip_h = true
 	elif (velocity.x > 0): 
 		sprite_2d.flip_h = false
+		
+		
+func _process(delta):
+	
+	if self.position.y > 670:
+		alive = false
+		queue_free()

@@ -50,7 +50,7 @@ func _physics_process(delta):
 		
 func _process(delta):
 	
-	if self.position.y > 670:
+	if self.position.y > 750:
 		GameState.p1alive = false
 		GameState.p1lives -= 1
 		print(GameState.p1lives)

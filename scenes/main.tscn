@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://7mwuqbi3ykln" path="res://Free/Background/Green.png" id="1_vq2li"]
 
 [node name="main" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_bd3o6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -22,6 +22,8 @@ script = ExtResource("1_26c4c")
 script = ExtResource("1_mbtdp")
 player1_tscn = ExtResource("6_dyrc4")
 
+[node name="GunSpawner" type="Node2D" parent="."]
+
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
 offset_left = 22.0
@@ -40,9 +42,9 @@ texture_filter = 1
 position = Vector2(577, -59)
 
 [node name="GunSniper" parent="." instance=ExtResource("7_j5a0p")]
-visible = false
 
 [node name="Player2" parent="." instance=ExtResource("8_rq4or")]
 position = Vector2(504, 169)
 
 [connection signal="body_entered" from="GunBox" to="GunBox" method="_on_body_entered"]
+[connection signal="body_entered" from="GunBox" to="GunSniper" method="_on_gun_box_body_entered"]

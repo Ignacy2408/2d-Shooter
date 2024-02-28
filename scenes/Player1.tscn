@@ -191,7 +191,6 @@ animations = [{
 size = Vector2(37, 48)
 
 [node name="Player1" type="CharacterBody2D"]
-position = Vector2(562, -115)
 script = ExtResource("1_c7lcq")
 metadata/_edit_group_ = true
 

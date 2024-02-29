@@ -42,6 +42,7 @@ texture_filter = 1
 position = Vector2(577, -59)
 
 [node name="GunSniper" parent="." instance=ExtResource("7_j5a0p")]
+visible = false
 
 [node name="Player2" parent="." instance=ExtResource("8_rq4or")]
 position = Vector2(504, 169)

@@ -57,4 +57,5 @@ icon_alignment = 1
 expand_icon = true
 
 [connection signal="pressed" from="TextureRect/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="TextureRect/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="TextureRect/QuitButton" to="." method="_on_quit_button_pressed"]

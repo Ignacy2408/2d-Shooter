@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://btki6gx4eneyb" path="res://scenes/gun_box.tscn" id="4_fkrp6"]
 [ext_resource type="Script" path="res://scenes/gun_box.gd" id="5_a45gf"]
 [ext_resource type="PackedScene" uid="uid://dokq2dxwaavcg" path="res://scenes/Player1.tscn" id="6_dyrc4"]
-[ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/guns.tscn" id="7_j5a0p"]
+[ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/sniper.tscn" id="7_j5a0p"]
 [ext_resource type="PackedScene" uid="uid://b5lq3k1mea4rh" path="res://scenes/Player2.tscn" id="8_rq4or"]
 [ext_resource type="Script" path="res://scenes/Label.gd" id="11_ihox3"]
 

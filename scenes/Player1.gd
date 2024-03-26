@@ -6,9 +6,14 @@ const JUMP_VELOCITY = -750.0
 @onready var sprite_2d = $Frog_Character
 @export var changeSpeed = 150
 var alive = true;
+var current_weapon: Node2D
+@onready var weapons: Node2D = get_node("Weapons/Sniper")
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+#func _ready() -> void:
+#	current_weapon = weapons.get_child(0)
 
 
 func _physics_process(delta):

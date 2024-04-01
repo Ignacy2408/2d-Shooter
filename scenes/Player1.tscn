@@ -1,10 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://dokq2dxwaavcg"]
+[gd_scene load_steps=30 format=3 uid="uid://dokq2dxwaavcg"]
 
 [ext_resource type="Script" path="res://scenes/Player1.gd" id="1_c7lcq"]
 [ext_resource type="Texture2D" uid="uid://dhy82dvfw83l8" path="res://Free/Main Characters/Ninja Frog/Jump (32x32).png" id="1_wkkt0"]
 [ext_resource type="Texture2D" uid="uid://bntafk5vusu3k" path="res://Free/Main Characters/Ninja Frog/Idle (32x32).png" id="2_o0f77"]
 [ext_resource type="Texture2D" uid="uid://crjc8wneqmvcs" path="res://Free/Main Characters/Ninja Frog/Run (32x32).png" id="4_5au7l"]
-[ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/sniper.tscn" id="5_hgug0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36yqe"]
 atlas = ExtResource("2_o0f77")
@@ -206,7 +205,3 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
 shape = SubResource("RectangleShape2D_7wrab")
-
-[node name="Weapons" type="Node2D" parent="."]
-
-[node name="Sniper" parent="Weapons" instance=ExtResource("5_hgug0")]

@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -750.0
 @export var changeSpeed = 150
 var alive = true;
 var current_weapon: Node2D
-@onready var weapons: Node2D = get_node("Weapons/Sniper")
+#@onready var weapons: Node2D = get_node("Weapons/Sniper")
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -57,6 +57,11 @@ func _process(delta):
 	
 	if self.position.y > 750:
 		GameState.p1alive = false
+		GameState.p1HasGun = false
 		GameState.p1lives -= 1
 		print(GameState.p1lives)
 		queue_free()
+	if (velocity.x < 0):
+		GameState.p1direction = false
+	elif (velocity.x > 0): 
+		GameState.p1direction = true

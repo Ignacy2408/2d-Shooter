@@ -5,15 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://rigcwmg57j2d" path="res://scenes/map_1.tscn" id="2_aec3i"]
 [ext_resource type="PackedScene" uid="uid://btki6gx4eneyb" path="res://scenes/gun_box.tscn" id="4_fkrp6"]
 [ext_resource type="Script" path="res://scenes/gun_box.gd" id="5_a45gf"]
+[ext_resource type="Script" path="res://scenes/GunSpawner.gd" id="5_qdsl0"]
 [ext_resource type="PackedScene" uid="uid://dokq2dxwaavcg" path="res://scenes/Player1.tscn" id="6_dyrc4"]
 [ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/sniper.tscn" id="7_j5a0p"]
 [ext_resource type="PackedScene" uid="uid://b5lq3k1mea4rh" path="res://scenes/Player2.tscn" id="8_rq4or"]
 [ext_resource type="Script" path="res://scenes/Label.gd" id="11_ihox3"]
-
-[sub_resource type="GDScript" id="GDScript_lrqyn"]
-script/source = "extends Node2D
-
-"
 
 [sub_resource type="LabelSettings" id="LabelSettings_1w4at"]
 font_size = 23
@@ -26,9 +22,14 @@ script = ExtResource("1_26c4c")
 [node name="PlayerSpawner" type="Node2D" parent="."]
 script = ExtResource("1_mbtdp")
 player1_tscn = ExtResource("6_dyrc4")
+sniper_tscn = ExtResource("7_j5a0p")
+
+[node name="Player1" parent="PlayerSpawner" instance=ExtResource("6_dyrc4")]
+texture_filter = 1
+position = Vector2(577, -59)
 
 [node name="GunSpawner" type="Node2D" parent="."]
-script = SubResource("GDScript_lrqyn")
+script = ExtResource("5_qdsl0")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
@@ -42,10 +43,6 @@ script = ExtResource("11_ihox3")
 
 [node name="GunBox" parent="." instance=ExtResource("4_fkrp6")]
 script = ExtResource("5_a45gf")
-
-[node name="Player1" parent="." instance=ExtResource("6_dyrc4")]
-texture_filter = 1
-position = Vector2(577, -59)
 
 [node name="GunSniper" parent="." instance=ExtResource("7_j5a0p")]
 position = Vector2(409, 352)

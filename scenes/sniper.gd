@@ -1,8 +1,6 @@
 extends Node2D
 
-
-func _process(_delta):
-	pass
+@onready var sniper_graphic = $SniperGraphic
 
 
 func _on_gun_box_body_entered(body):
@@ -10,3 +8,17 @@ func _on_gun_box_body_entered(body):
 		queue_free()
 		
 	
+	
+	
+func _process(delta):
+	
+	if GameState.p1alive == false:
+		queue_free()
+		
+	if GameState.p1direction == false:
+		sniper_graphic.flip_h = true
+	elif GameState.p1direction:
+		sniper_graphic.flip_h = false
+	
+		
+

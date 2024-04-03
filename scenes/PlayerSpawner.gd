@@ -6,8 +6,7 @@ extends Node2D
 
 
 func _on_gun_box_body_entered(body):
-	var new_p1Gun = sniper_tscn.instantiate()
-	self.add_child(new_p1Gun)
+	pass
 
 
 
@@ -20,7 +19,13 @@ func _process(_delta):
 		new_player1.position.x = 562
 		new_player1.position.y = -115
 		GameState.p1alive = true
-		
+	if GameState.p1entered == true && GameState.p1HasGun == true:
+		var new_p1Gun = sniper_tscn.instantiate()
+		self.add_child(new_p1Gun)
+		new_p1Gun.position.x = GameState.p1PosX
+		new_p1Gun.position.y = GameState.p1PosY
+		GameState.gunPosession = "Player 1"
+		GameState.p1entered = false
 
 		
 

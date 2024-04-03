@@ -11,14 +11,18 @@ func _on_gun_box_body_entered(body):
 	
 	
 func _process(delta):
+
 	
-	if GameState.p1alive == false:
-		queue_free()
+	if GameState.gunPosession == "Player 1":
 		
-	if GameState.p1direction == false:
-		sniper_graphic.flip_h = true
-	elif GameState.p1direction:
-		sniper_graphic.flip_h = false
-	
+		if GameState.p1direction == false:
+			sniper_graphic.flip_h = true
+		elif GameState.p1direction:
+			sniper_graphic.flip_h = false
 		
+		if (GameState.p1alive == true && GameState.p1HasGun == true):
+			self.position.x = GameState.p1PosX
+			self.position.y = GameState.p1PosY + 15
+		if GameState.p1alive == false:
+			queue_free()
 

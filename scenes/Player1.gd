@@ -55,6 +55,9 @@ func _physics_process(delta):
 		
 func _process(delta):
 	
+	GameState.p1PosX = self.position.x
+	GameState.p1PosY = self.position.y
+	
 	if self.position.y > 750:
 		GameState.p1alive = false
 		GameState.p1HasGun = false
@@ -65,3 +68,4 @@ func _process(delta):
 		GameState.p1direction = false
 	elif (velocity.x > 0): 
 		GameState.p1direction = true
+	

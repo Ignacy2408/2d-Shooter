@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var sniper_graphic = $SniperGraphic
+var gun_posession
 
 
 func _on_gun_box_body_entered(body):

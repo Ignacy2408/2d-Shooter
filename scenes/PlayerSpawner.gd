@@ -25,7 +25,7 @@ func _process(_delta):
 		new_p1Gun.position.x = GameState.p1PosX
 		new_p1Gun.position.y = GameState.p1PosY
 		GameState.gunPosession = "Player 1"
-		
+		5
 		GameState.p1entered = false
 
 		

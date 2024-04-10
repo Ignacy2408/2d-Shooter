@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bobrrijjlgdh"]
 
-[ext_resource type="PackedScene" uid="uid://ble2klaay3085" path="res://input_button.tscn" id="1_2dwsm"]
-[ext_resource type="Script" path="res://input_button.gd" id="2_qxka7"]
+[ext_resource type="PackedScene" uid="uid://ble2klaay3085" path="res://scenes/input_button.tscn" id="1_2dwsm"]
+[ext_resource type="Script" path="res://scenes/input_button.gd" id="2_g1q6m"]
 
 [node name="InputSettings" type="Control"]
 layout_mode = 3
@@ -69,4 +69,4 @@ layout_mode = 2
 
 [node name="InputButton9" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
 layout_mode = 2
-script = ExtResource("2_qxka7")
+script = ExtResource("2_g1q6m")

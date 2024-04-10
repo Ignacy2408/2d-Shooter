@@ -15,9 +15,12 @@ func _on_gun_box_body_entered(body):
 	
 func _process(delta):
 
+
 	
 	if GameState.gunPosession == "Player 1":
 		
+		if Input.is_action_just_pressed('p1Shoot'):
+			shoot()
 		if GameState.p1direction == false:
 			sniper_graphic.flip_h = true
 		elif GameState.p1direction:
@@ -29,15 +32,16 @@ func _process(delta):
 			self.position.y = GameState.p1PosY + 15
 		if GameState.p1alive == false:
 			queue_free()
-		if Input.is_action_just_pressed('p1Shoot'):
-			shoot()
+
 
 
 func shoot():
 	var bullet = bulletPath.instantiate()
 	get_parent().add_child(bullet)
+	bullet.position.x = sniper_graphic.position.x
 	if sniper_graphic.flip_h == true:
 		bullet.position.y = sniper_graphic.position.y - 5
+		
 	elif sniper_graphic.flip_h == false:
 		bullet.position.y = sniper_graphic.position.y + 5
 

@@ -1,7 +1,7 @@
 extends Button
 
 
-@onready var input_button_scene = preload("res://input_button.tscn")
+@onready var input_button_scene = preload("res://scenes/input_button.tscn")
 @onready var action_list = $PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList
 
 

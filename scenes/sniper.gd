@@ -1,14 +1,20 @@
 extends Node2D
 const bulletPath = preload('res://scenes/Bullet.tscn')
-@onready var sniper_graphic = $SniperGraphic
-var gun_posession
 
+@onready var sniper_graphic = $SniperGraphic
+
+var gun_posession
+@onready var thisSniper = GameState.gunPosession
 
 
 
 func _on_gun_box_body_entered(body):
-	if (body.name == "Player1"||body.name == "Player2"):
-		queue_free()
+	if body.name == "Player 1":
+		if thisSniper == "Player 1":
+			queue_free()
+	elif body.name == "Player 2":
+		if thisSniper == "Player 2":
+			queue_free()
 		
 	
 	
@@ -16,11 +22,11 @@ func _on_gun_box_body_entered(body):
 func _process(delta):
 
 
-	
-	if GameState.gunPosession == "Player 1":
+#P1
+	if thisSniper == "Player 1":
 		
 		if Input.is_action_just_pressed('p1Shoot'):
-			shoot()
+			shoot("p1")
 		if GameState.p1direction == false:
 			sniper_graphic.flip_h = true
 		elif GameState.p1direction:
@@ -32,16 +38,46 @@ func _process(delta):
 			self.position.y = GameState.p1PosY + 15
 		if GameState.p1alive == false:
 			queue_free()
-
-
-
-func shoot():
-	var bullet = bulletPath.instantiate()
-	get_parent().add_child(bullet)
-	bullet.position.x = sniper_graphic.position.x
-	if sniper_graphic.flip_h == true:
-		bullet.position.y = sniper_graphic.position.y - 5
+#P2
+	elif thisSniper == "Player 2":
 		
-	elif sniper_graphic.flip_h == false:
-		bullet.position.y = sniper_graphic.position.y + 5
+		if Input.is_action_just_pressed('p2Shoot'):
+			shoot("p2")
+		if GameState.p2direction == false:
+			sniper_graphic.flip_h = true
+		elif GameState.p2direction:
+			sniper_graphic.flip_h = false
+			
+		
+		if (GameState.p2alive == true && GameState.p2HasGun == true):
+			self.position.x = GameState.p2PosX
+			self.position.y = GameState.p2PosY + 15
+		if GameState.p2alive == false:
+			queue_free()
+
+
+
+func shoot(playerType):
+#P1
+	var bullet = bulletPath.instantiate()
+	if playerType == "p1":
+		bullet.position.y = GameState.p1PosY + 10
+		if GameState.p1direction == true:
+			bullet.position.x = GameState.p1PosX + 30
+		
+		elif GameState.p1direction == false:
+		
+			bullet.position.x = GameState.p1PosX - 30
+#P2
+	elif playerType == "p2":
+		bullet.position.y = GameState.p2PosY + 10
+		if GameState.p2direction == true:
+			bullet.position.x = GameState.p2PosX + 30
+		
+		elif GameState.p2direction == false:
+		
+			bullet.position.x = GameState.p2PosX - 30
+			
+
+	get_parent().add_child(bullet)
 

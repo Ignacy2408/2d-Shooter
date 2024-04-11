@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmo1g0dghwgr6"]
+[gd_scene load_steps=4 format=3 uid="uid://dmo1g0dghwgr6"]
 
+[ext_resource type="Script" path="res://scenes/Bullet.gd" id="1_lcyrt"]
 [ext_resource type="Texture2D" uid="uid://rdk8tsgrcwmi" path="res://kenney_space-shooter-redux/PNG/Lasers/laserBlue07.png" id="1_p36w3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7v1e"]
 size = Vector2(36, 8)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+script = ExtResource("1_lcyrt")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_i7v1e")

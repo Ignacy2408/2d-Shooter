@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://deuv5ay7440ah"]
+[gd_scene load_steps=12 format=3 uid="uid://deuv5ay7440ah"]
 
 [ext_resource type="Script" path="res://scenes/maps.gd" id="1_26c4c"]
 [ext_resource type="Script" path="res://scenes/PlayerSpawner.gd" id="1_mbtdp"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bbqc3a87e7k5h" path="res://scenes/gun_box.tscn" id="4_fkrp6"]
 [ext_resource type="Script" path="res://scenes/GunSpawner.gd" id="5_qdsl0"]
 [ext_resource type="PackedScene" uid="uid://dokq2dxwaavcg" path="res://scenes/Player1.tscn" id="6_dyrc4"]
+[ext_resource type="Script" path="res://scenes/BoxSpawner.gd" id="6_t5s77"]
 [ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/sniper.tscn" id="7_j5a0p"]
 [ext_resource type="PackedScene" uid="uid://b5lq3k1mea4rh" path="res://scenes/Player2.tscn" id="8_rq4or"]
 [ext_resource type="Script" path="res://scenes/Label.gd" id="11_ihox3"]
@@ -26,6 +27,9 @@ sniper_tscn = ExtResource("7_j5a0p")
 [node name="Player1" parent="PlayerSpawner" instance=ExtResource("6_dyrc4")]
 texture_filter = 1
 position = Vector2(577, -59)
+
+[node name="BoxSpawner" type="Node2D" parent="."]
+script = ExtResource("6_t5s77")
 
 [node name="GunSpawner" type="Node2D" parent="."]
 position = Vector2(0, 2)

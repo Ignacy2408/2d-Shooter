@@ -13,3 +13,11 @@ texture_filter = 1
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.135986, 0.0967715)
 texture = ExtResource("2_2qdsl")
+
+[node name="p1ReloadTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="p2ReloadTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="p1ReloadTimer" to="." method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="p2ReloadTimer" to="." method="_on_p_2_reload_timer_timeout"]

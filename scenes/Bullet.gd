@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var bullet_speed = 500
 var right = true
 func _ready(): 
-	right = GameState.p1direction
+	pass
 
 func _process(delta):
 	if right == true:

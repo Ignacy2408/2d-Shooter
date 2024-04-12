@@ -1,7 +1,9 @@
 extends Node
 
 var p1alive = true
+var p2alive = true
 var p1lives = 10
+var p2lives = 10
 var p1HasGun = false
 var p2HasGun = false
 var p1entered = false

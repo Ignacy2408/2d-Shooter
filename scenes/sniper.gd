@@ -4,7 +4,7 @@ const bulletPath = preload('res://scenes/Bullet.tscn')
 @onready var sniper_graphic = $SniperGraphic
 
 var gun_posession
-@onready var thisSniper = GameState.gunPosession
+@onready var thisSniper = ""
 
 
 
@@ -62,22 +62,25 @@ func shoot(playerType):
 	var bullet = bulletPath.instantiate()
 	if playerType == "p1":
 		bullet.position.y = GameState.p1PosY + 10
+		
 		if GameState.p1direction == true:
 			bullet.position.x = GameState.p1PosX + 30
+			bullet.right = true
 		
 		elif GameState.p1direction == false:
 		
 			bullet.position.x = GameState.p1PosX - 30
+			bullet.right = false
 #P2
 	elif playerType == "p2":
 		bullet.position.y = GameState.p2PosY + 10
 		if GameState.p2direction == true:
 			bullet.position.x = GameState.p2PosX + 30
+			bullet.right = true
 		
 		elif GameState.p2direction == false:
 		
 			bullet.position.x = GameState.p2PosX - 30
-			
-
+			bullet.right = false
 	get_parent().add_child(bullet)
 

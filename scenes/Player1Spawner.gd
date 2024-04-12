@@ -13,6 +13,7 @@ func _on_gun_box_body_entered(body):
 
 
 func _process(_delta):
+	#P1
 	var new_player1 = player1_tscn.instantiate()
 	if (GameState.p1alive == false && GameState.p1lives > 0):
 		self.add_child(new_player1)
@@ -20,14 +21,17 @@ func _process(_delta):
 		new_player1.position.y = -115
 		GameState.p1alive = true
 	if GameState.p1entered == true && GameState.p1HasGun == true:
-		GameState.gunPosession = "Player 1"
+		GameState.gunPosession = ""
 		var new_p1Gun = sniper_tscn.instantiate()
 		self.add_child(new_p1Gun)
 		new_p1Gun.position.x = GameState.p1PosX
 		new_p1Gun.position.y = GameState.p1PosY
+		new_p1Gun.thisSniper = "Player 1"
 		
 		
 		GameState.p1entered = false
+		
+		
 
 		
 

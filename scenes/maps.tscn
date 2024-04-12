@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://deuv5ay7440ah"]
 
 [ext_resource type="Script" path="res://scenes/maps.gd" id="1_26c4c"]
-[ext_resource type="Script" path="res://scenes/PlayerSpawner.gd" id="1_mbtdp"]
+[ext_resource type="Script" path="res://scenes/Player1Spawner.gd" id="1_mbtdp"]
 [ext_resource type="PackedScene" uid="uid://rigcwmg57j2d" path="res://scenes/map_1.tscn" id="2_aec3i"]
 [ext_resource type="PackedScene" uid="uid://bbqc3a87e7k5h" path="res://scenes/gun_box.tscn" id="4_fkrp6"]
-[ext_resource type="Script" path="res://scenes/GunSpawner.gd" id="5_qdsl0"]
+[ext_resource type="Script" path="res://scenes/Player2Spawner.gd" id="5_qdsl0"]
 [ext_resource type="PackedScene" uid="uid://dokq2dxwaavcg" path="res://scenes/Player1.tscn" id="6_dyrc4"]
 [ext_resource type="Script" path="res://scenes/BoxSpawner.gd" id="6_t5s77"]
 [ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/sniper.tscn" id="7_j5a0p"]
@@ -19,21 +19,26 @@ script = ExtResource("1_26c4c")
 
 [node name="map1" parent="." instance=ExtResource("2_aec3i")]
 
-[node name="PlayerSpawner" type="Node2D" parent="."]
+[node name="Player1Spawner" type="Node2D" parent="."]
 script = ExtResource("1_mbtdp")
 player1_tscn = ExtResource("6_dyrc4")
 sniper_tscn = ExtResource("7_j5a0p")
 
-[node name="Player1" parent="PlayerSpawner" instance=ExtResource("6_dyrc4")]
+[node name="Player1" parent="Player1Spawner" instance=ExtResource("6_dyrc4")]
 texture_filter = 1
 position = Vector2(577, -59)
 
-[node name="BoxSpawner" type="Node2D" parent="."]
-script = ExtResource("6_t5s77")
-
-[node name="GunSpawner" type="Node2D" parent="."]
+[node name="Player2Spawner" type="Node2D" parent="."]
 position = Vector2(0, 2)
 script = ExtResource("5_qdsl0")
+player2_tscn = ExtResource("8_rq4or")
+sniper_tscn = ExtResource("7_j5a0p")
+
+[node name="Player2" parent="Player2Spawner" instance=ExtResource("8_rq4or")]
+position = Vector2(504, 167)
+
+[node name="BoxSpawner" type="Node2D" parent="."]
+script = ExtResource("6_t5s77")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
@@ -48,14 +53,12 @@ script = ExtResource("11_ihox3")
 [node name="GunBox" parent="." instance=ExtResource("4_fkrp6")]
 
 [node name="GunSniper" parent="." instance=ExtResource("7_j5a0p")]
+visible = false
 position = Vector2(409, 352)
-
-[node name="Player2" parent="." instance=ExtResource("8_rq4or")]
-position = Vector2(504, 169)
 
 [node name="GunBox2" parent="." instance=ExtResource("4_fkrp6")]
 position = Vector2(1016, 109)
 
-[connection signal="body_entered" from="GunBox" to="PlayerSpawner" method="_on_gun_box_body_entered"]
-[connection signal="body_entered" from="GunBox" to="GunSpawner" method="_on_gun_box_body_entered"]
+[connection signal="body_entered" from="GunBox" to="Player1Spawner" method="_on_gun_box_body_entered"]
+[connection signal="body_entered" from="GunBox" to="Player2Spawner" method="_on_gun_box_body_entered"]
 [connection signal="body_entered" from="GunBox" to="GunSniper" method="_on_gun_box_body_entered"]

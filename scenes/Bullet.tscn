@@ -12,6 +12,7 @@ script = ExtResource("1_lcyrt")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
 shape = SubResource("RectangleShape2D_i7v1e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

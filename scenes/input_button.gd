@@ -1,7 +1,11 @@
 extends Button
 
 
+<<<<<<< Updated upstream
 @onready var input_button_scene = preload("res://scenes/input_button.tscn")
+=======
+@onready var input_button_scene = preload("res://scenes/input_button.gd")
+>>>>>>> Stashed changes
 @onready var action_list = $PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList
 
 

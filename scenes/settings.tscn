@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bobrrijjlgdh"]
+[gd_scene load_steps=4 format=3 uid="uid://bobrrijjlgdh"]
 
 [ext_resource type="PackedScene" uid="uid://ble2klaay3085" path="res://scenes/input_button.tscn" id="1_2dwsm"]
 [ext_resource type="Script" path="res://scenes/settings.gd" id="1_6f0pn"]
 [ext_resource type="Texture2D" uid="uid://7mwuqbi3ykln" path="res://Free/Background/Green.png" id="1_s83e4"]
-[ext_resource type="Script" path="res://scenes/input_button.gd" id="2_g1q6m"]
 
 [node name="InputSettings" type="Control"]
 layout_mode = 3
@@ -88,7 +87,6 @@ layout_mode = 2
 
 [node name="InputButton9" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
 layout_mode = 2
-script = ExtResource("2_g1q6m")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1

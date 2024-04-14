@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bobrrijjlgdh"]
+[gd_scene load_steps=3 format=3 uid="uid://bobrrijjlgdh"]
 
 [ext_resource type="PackedScene" uid="uid://ble2klaay3085" path="res://scenes/input_button.tscn" id="1_2dwsm"]
 [ext_resource type="Script" path="res://scenes/settings.gd" id="1_6f0pn"]
-[ext_resource type="Texture2D" uid="uid://7mwuqbi3ykln" path="res://Free/Background/Green.png" id="1_s83e4"]
 
 [node name="InputSettings" type="Control"]
 layout_mode = 3
@@ -13,95 +12,68 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6f0pn")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 1.0
-offset_right = 304.0
-offset_bottom = 610.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_s83e4")
-stretch_mode = 1
-metadata/_edit_lock_ = true
-
-[node name="PanelContainer" type="PanelContainer" parent="TextureRect"]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -586.5
-offset_top = -559.5
-offset_right = 277.5
-offset_bottom = -51.5
+offset_left = -432.0
+offset_top = -254.0
+offset_right = 432.0
+offset_bottom = 254.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ActionList" type="VBoxContainer" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="ActionList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="InputButton" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
+[node name="InputButton" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
 layout_mode = 2
 
-[node name="InputButton2" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
+[node name="InputButton2" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
 layout_mode = 2
 
-[node name="InputButton3" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
+[node name="InputButton3" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
 layout_mode = 2
 
-[node name="InputButton4" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
+[node name="InputButton4" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
 layout_mode = 2
 
-[node name="InputButton5" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
+[node name="InputButton5" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
 layout_mode = 2
 
-[node name="InputButton6" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
+[node name="InputButton6" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
 layout_mode = 2
 
-[node name="InputButton7" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
+[node name="InputButton7" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
 layout_mode = 2
 
-[node name="InputButton8" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
+[node name="InputButton8" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
 layout_mode = 2
 
-[node name="InputButton9" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
+[node name="InputButton9" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_2dwsm")]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-offset_left = 26.0
-offset_top = 23.0
-offset_right = 133.0
-offset_bottom = 76.0
+[node name="ResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "reset to default"
 
-[node name="Label" type="Label" parent="Button"]
-layout_mode = 0
-offset_right = 107.0
-offset_bottom = 55.0
-text = "Back"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]

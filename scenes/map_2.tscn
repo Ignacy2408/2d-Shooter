@@ -1,11 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://rigcwmg57j2d"]
+[gd_scene load_steps=5 format=3 uid="uid://dryk8qdc3aruf"]
 
-[ext_resource type="Script" path="res://scenes/map1.gd" id="1_5006v"]
-[ext_resource type="Texture2D" uid="uid://bmdxev7xx2ros" path="res://backgrounds/dark background.png" id="2_2pijl"]
-[ext_resource type="Texture2D" uid="uid://brn2ofsekx7ll" path="res://Free/Terrain/Terrain (16x16).png" id="3_hqegp"]
+[ext_resource type="Texture2D" uid="uid://ofos5iumv2i1" path="res://backgrounds/JWDLx5AZBtI.jpg" id="1_5suhi"]
+[ext_resource type="Texture2D" uid="uid://brn2ofsekx7ll" path="res://Free/Terrain/Terrain (16x16).png" id="2_wu7ea"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gje3o"]
-texture = ExtResource("3_hqegp")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6doay"]
+texture = ExtResource("2_wu7ea")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -39,12 +38,15 @@ texture = ExtResource("3_hqegp")
 12:0/0 = 0
 12:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:0/0/physics_layer_0/angular_velocity = 0.0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:0/0 = 0
 13:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:0/0/physics_layer_0/angular_velocity = 0.0
+13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:0/0 = 0
 14:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:0/0/physics_layer_0/angular_velocity = 0.0
+14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:0/0 = 0
 15:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:0/0/physics_layer_0/angular_velocity = 0.0
@@ -102,12 +104,15 @@ texture = ExtResource("3_hqegp")
 17:1/0 = 0
 17:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:1/0/physics_layer_0/angular_velocity = 0.0
+17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.875, -8, -3)
 18:1/0 = 0
 18:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:1/0/physics_layer_0/angular_velocity = 0.0
+18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.875, -8, -3)
 19:1/0 = 0
 19:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:1/0/physics_layer_0/angular_velocity = 0.0
+19:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.875, -8, -3)
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
@@ -177,15 +182,12 @@ texture = ExtResource("3_hqegp")
 12:4/0 = 0
 12:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:4/0/physics_layer_0/angular_velocity = 0.0
-12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:4/0 = 0
 13:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:4/0/physics_layer_0/angular_velocity = 0.0
-13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:4/0 = 0
 14:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:4/0/physics_layer_0/angular_velocity = 0.0
-14:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:4/0 = 0
 15:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:4/0/physics_layer_0/angular_velocity = 0.0
@@ -442,22 +444,21 @@ texture = ExtResource("3_hqegp")
 20:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:10/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_tb26o"]
+[sub_resource type="TileSet" id="TileSet_qb6v1"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_gje3o")
+sources/0 = SubResource("TileSetAtlasSource_6doay")
 
-[node name="map1" type="Node2D"]
-script = ExtResource("1_5006v")
+[node name="map_2" type="Node2D"]
 
-[node name="DarkBackground" type="Sprite2D" parent="."]
-position = Vector2(580, 348)
-scale = Vector2(0.778667, 0.715151)
-texture = ExtResource("2_2pijl")
+[node name="Forest_backgound" type="Sprite2D" parent="."]
+position = Vector2(576.5, 324.5)
+scale = Vector2(0.900781, 0.901389)
+texture = ExtResource("1_5suhi")
 metadata/_edit_lock_ = true
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap2" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(3, 3)
-tile_set = SubResource("TileSet_tb26o")
+tile_set = SubResource("TileSet_qb6v1")
 format = 2
-layer_0/tile_data = PackedInt32Array(327689, 786433, 4, 327694, 917505, 4, 524304, 917505, 4, 524295, 786433, 4, 524296, 851969, 4, 524297, 851969, 4, 524298, 851969, 4, 524299, 851969, 4, 524300, 851969, 4, 524301, 851969, 4, 524302, 851969, 4, 524303, 851969, 4, 327690, 851969, 4, 327691, 851969, 4, 327692, 851969, 4, 327693, 851969, 4, 196613, 917505, 4, 196626, 786433, 4, 196609, 786433, 4, 196630, 917505, 4, 196610, 851969, 4, 196611, 851969, 4, 196612, 851969, 4, 196629, 851969, 4, 196628, 851969, 4, 196627, 851969, 4, 655362, 786433, 4, 655378, 786433, 4, 655365, 917505, 4, 655381, 917505, 4, 655363, 851969, 4, 655364, 851969, 4, 655379, 851969, 4, 655380, 851969, 4)
+layer_0/tile_data = PackedInt32Array(1703949, 786432, 0, 1703950, 851968, 0, 1703951, 851968, 0, 1703952, 851968, 0, 1703953, 851968, 0, 1703954, 851968, 0, 1703955, 851968, 0, 1703956, 917504, 0, 786436, 786432, 0, 786437, 851968, 0, 786438, 851968, 0, 786439, 851968, 0, 786440, 851968, 0, 786441, 917504, 0, 786446, 786432, 0, 786447, 851968, 0, 786448, 851968, 0, 786449, 851968, 0, 786450, 851968, 0, 786451, 917504, 0, 589827, 1179648, 1, 589828, 1179648, 1, 589829, 1179648, 1, 589830, 1245184, 1, 589826, 1114112, 1, 589841, 1114112, 1, 589842, 1179648, 1, 589843, 1179648, 1, 589844, 1179648, 1, 589845, 1245184, 1, 458761, 1114112, 1, 458762, 1179648, 1, 458763, 1179648, 1, 458764, 1179648, 1, 458765, 1179648, 1, 458766, 1245184, 1, 196616, 786432, 0, 196617, 851968, 0, 196618, 851968, 0, 196619, 851968, 0, 196620, 851968, 0, 196621, 851968, 0, 196622, 851968, 0, 196623, 917504, 0, 327700, 1114112, 1, 327701, 1179648, 1, 327702, 1245184, 1, 327681, 1114112, 1, 327682, 1179648, 1, 327683, 1245184, 1)

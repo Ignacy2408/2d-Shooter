@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://grm2it2ky6ac"]
+
+[ext_resource type="Script" path="res://scenes/map_wahl.gd" id="1_3145k"]
+[ext_resource type="Texture2D" uid="uid://7mwuqbi3ykln" path="res://Free/Background/Green.png" id="1_b4agg"]
+[ext_resource type="Texture2D" uid="uid://domlxt25lq2jd" path="res://Map Bilder/Map1.png" id="2_vqkfi"]
+[ext_resource type="Texture2D" uid="uid://coem2e0bgh1d8" path="res://Map Bilder/Map2.png" id="3_ffm4h"]
+
+[node name="mapWahl" type="Node2D"]
+script = ExtResource("1_3145k")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = 1148.0
+offset_bottom = 643.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_b4agg")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="map1Button" type="Button" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 250.0
+offset_top = 136.0
+offset_right = 532.0
+offset_bottom = 297.0
+icon = ExtResource("2_vqkfi")
+icon_alignment = 1
+expand_icon = true
+
+[node name="map2sButton" type="Button" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 616.0
+offset_top = 136.0
+offset_right = 898.0
+offset_bottom = 297.0
+text = "
+"
+icon = ExtResource("3_ffm4h")
+icon_alignment = 1
+expand_icon = true
+
+[node name="BackButton" type="Button" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 32.0
+offset_top = 27.0
+offset_right = 167.0
+offset_bottom = 91.0
+text = "Back
+"
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="TextureRect/map1Button" to="." method="_on_map_1_button_pressed"]
+[connection signal="pressed" from="TextureRect/map2sButton" to="." method="_on_map_2s_button_pressed"]
+[connection signal="pressed" from="TextureRect/BackButton" to="." method="_on_back_button_pressed"]

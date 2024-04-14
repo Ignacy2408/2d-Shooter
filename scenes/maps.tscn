@@ -30,7 +30,7 @@ sniper_tscn = ExtResource("7_j5a0p")
 
 [node name="Player1" parent="Player1Spawner" instance=ExtResource("6_dyrc4")]
 texture_filter = 1
-position = Vector2(577, -59)
+position = Vector2(650, -60)
 
 [node name="Player2Spawner" type="Node2D" parent="."]
 position = Vector2(0, 2)
@@ -39,7 +39,7 @@ player2_tscn = ExtResource("8_rq4or")
 sniper_tscn = ExtResource("7_j5a0p")
 
 [node name="Player2" parent="Player2Spawner" instance=ExtResource("8_rq4or")]
-position = Vector2(504, 167)
+position = Vector2(500, -60)
 
 [node name="BoxSpawner" type="Node2D" parent="."]
 script = ExtResource("6_t5s77")
@@ -65,13 +65,14 @@ label_settings = SubResource("LabelSettings_nfs5r")
 script = ExtResource("10_0oomh")
 
 [node name="GunBox" parent="." instance=ExtResource("4_fkrp6")]
+position = Vector2(150, 125)
 
 [node name="GunSniper" parent="." instance=ExtResource("7_j5a0p")]
 visible = false
 position = Vector2(409, 352)
 
 [node name="GunBox2" parent="." instance=ExtResource("4_fkrp6")]
-position = Vector2(1016, 109)
+position = Vector2(1000, 125)
 
 [connection signal="body_entered" from="GunBox" to="Player1Spawner" method="_on_gun_box_body_entered"]
 [connection signal="body_entered" from="GunBox" to="Player2Spawner" method="_on_gun_box_body_entered"]

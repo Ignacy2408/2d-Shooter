@@ -11,10 +11,9 @@ func _process(_delta):
 
 
 
-#func _ready():
-#	var ka = get_node("/root/main")
-#	ka.connect("continue1", self, "_on_continue1")
+func _ready():
+	signale.connect("continueButton", self, "continueButton")
 
-func _on_continue1():
+func continueButton():
 	$GUI/inGameMenu.visible = false
 	Engine.time_scale = 1

@@ -3,7 +3,7 @@ extends Node2D
 
 
 func _on_continue_button_pressed():
-	$main.emit_signal("continue1")
+	Signale.emit_signal("continueButton")
 
 
 func _on_settings_button_pressed():

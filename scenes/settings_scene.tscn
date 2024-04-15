@@ -27,6 +27,7 @@ metadata/_edit_lock_ = true
 [node name="InputSettings" parent="TextureRect/GUI" instance=ExtResource("1_imiro")]
 
 [node name="Button" type="Button" parent="TextureRect/GUI/InputSettings"]
+layout_mode = 0
 offset_left = 29.0
 offset_top = 21.0
 offset_right = 122.0

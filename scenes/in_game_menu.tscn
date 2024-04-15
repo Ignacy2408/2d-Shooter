@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=3 uid="uid://m4rcbscskg10"]
+
+[ext_resource type="Script" path="res://inGameMenu.gd" id="1_ej24r"]
+[ext_resource type="PackedScene" uid="uid://bobrrijjlgdh" path="res://scenes/settings.tscn" id="2_llro8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ws6gx"]
+bg_color = Color(0, 0, 0, 0.470588)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqd4x"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5tky"]
+bg_color = Color(1, 1, 1, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ev7h"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6njsb"]
+bg_color = Color(1, 1, 1, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c333q"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hc0g2"]
+bg_color = Color(1, 1, 1, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsl2n"]
+bg_color = Color(0, 0, 0, 0.843137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l610c"]
+bg_color = Color(1, 1, 1, 0.392157)
+
+[node name="inGameMenu" type="Node2D"]
+position = Vector2(476, 196)
+script = ExtResource("1_ej24r")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 216.0
+offset_bottom = 240.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ws6gx")
+
+[node name="continueButton" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 180.0
+offset_bottom = 90.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_qqd4x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n5tky")
+text = "Continue
+"
+
+[node name="settingsButton" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 100.0
+offset_right = 180.0
+offset_bottom = 150.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ev7h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6njsb")
+text = "Settings
+"
+
+[node name="exitButton" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 160.0
+offset_right = 180.0
+offset_bottom = 210.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_c333q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hc0g2")
+text = "Exit"
+
+[node name="InputSettings" parent="." instance=ExtResource("2_llro8")]
+visible = false
+offset_left = 100.0
+offset_top = 130.0
+offset_right = 100.0
+offset_bottom = 130.0
+
+[node name="BackButton" type="Button" parent="InputSettings"]
+layout_mode = 0
+offset_left = -556.0
+offset_top = -303.0
+offset_right = -446.0
+offset_bottom = -254.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jsl2n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l610c")
+text = "Back"
+
+[connection signal="pressed" from="Panel/continueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Panel/settingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Panel/exitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="InputSettings/BackButton" to="." method="_on_back_button_pressed"]

@@ -13,7 +13,7 @@ var input_actions = {
 	"p1Jump": "P1 Jump",
 	"p1Left": "P1 Left",
 	"p1Right": "P1 Right",
-	"p1shoot": "P1 Shoot",
+	"p1Shoot": "P1 Shoot",
 	"p2Jump": "P2 Jump",
 	"p2Left": "P2 Left",
 	"p2Right": "P2 Right",

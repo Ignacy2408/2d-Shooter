@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://deuv5ay7440ah"]
+[gd_scene load_steps=15 format=3 uid="uid://deuv5ay7440ah"]
 
 [ext_resource type="Script" path="res://scenes/maps.gd" id="1_26c4c"]
 [ext_resource type="Script" path="res://scenes/Player1Spawner.gd" id="1_mbtdp"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b5lq3k1mea4rh" path="res://scenes/Player2.tscn" id="8_rq4or"]
 [ext_resource type="Script" path="res://scenes/p2LivesLabelLabel2.gd" id="10_0oomh"]
 [ext_resource type="Script" path="res://scenes/Label.gd" id="11_ihox3"]
+[ext_resource type="PackedScene" uid="uid://m4rcbscskg10" path="res://scenes/in_game_menu.tscn" id="12_b5j4c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1w4at"]
 font_size = 23
@@ -56,10 +57,10 @@ script = ExtResource("11_ihox3")
 
 [node name="p2LivesLabelLabel2" type="Label" parent="."]
 texture_filter = 1
-offset_left = 995.0
-offset_top = 13.0
-offset_right = 1135.0
-offset_bottom = 53.0
+offset_left = 996.0
+offset_top = 7.0
+offset_right = 1136.0
+offset_bottom = 47.0
 text = "P2 Lives:"
 label_settings = SubResource("LabelSettings_nfs5r")
 script = ExtResource("10_0oomh")
@@ -73,6 +74,11 @@ position = Vector2(409, 352)
 
 [node name="GunBox2" parent="." instance=ExtResource("4_fkrp6")]
 position = Vector2(1000, 125)
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="inGameMenu" parent="GUI" instance=ExtResource("12_b5j4c")]
+visible = false
 
 [connection signal="body_entered" from="GunBox" to="Player1Spawner" method="_on_gun_box_body_entered"]
 [connection signal="body_entered" from="GunBox" to="Player2Spawner" method="_on_gun_box_body_entered"]

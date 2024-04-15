@@ -2,13 +2,13 @@ extends Node2D
 
 
 
-
 func _on_continue_button_pressed():
-	pass
+	$main.emit_signal("continue1")
 
 
 func _on_settings_button_pressed():
 	$InputSettings.visible = true
+	$Panel.visible = false
 
 
 func _on_exit_button_pressed():
@@ -17,3 +17,5 @@ func _on_exit_button_pressed():
 
 func _on_back_button_pressed():
 	$InputSettings.visible = false
+	$Panel.visible = true
+	

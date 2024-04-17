@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://grm2it2ky6ac"]
+[gd_scene load_steps=7 format=3 uid="uid://grm2it2ky6ac"]
 
 [ext_resource type="Script" path="res://scenes/map_wahl.gd" id="1_3145k"]
 [ext_resource type="Texture2D" uid="uid://7mwuqbi3ykln" path="res://Free/Background/Green.png" id="1_b4agg"]
 [ext_resource type="Texture2D" uid="uid://domlxt25lq2jd" path="res://Map Bilder/Map1.png" id="2_vqkfi"]
 [ext_resource type="Texture2D" uid="uid://coem2e0bgh1d8" path="res://Map Bilder/Map2.png" id="3_ffm4h"]
+[ext_resource type="Texture2D" uid="uid://dk8u1hublbxc6" path="res://Map Bilder/Screenshot 2024-04-17 at 10.18.07.png" id="5_e5eqe"]
+[ext_resource type="Texture2D" uid="uid://c6o25olf2wwk" path="res://Map Bilder/Screenshot 2024-04-17 at 11.08.14.png" id="6_4eofj"]
 
 [node name="mapWahl" type="Node2D"]
 script = ExtResource("1_3145k")
@@ -33,7 +35,7 @@ icon = ExtResource("2_vqkfi")
 icon_alignment = 1
 expand_icon = true
 
-[node name="map2sButton" type="Button" parent="TextureRect"]
+[node name="map2Button" type="Button" parent="TextureRect"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 616.0
@@ -43,6 +45,28 @@ offset_bottom = 297.0
 text = "
 "
 icon = ExtResource("3_ffm4h")
+icon_alignment = 1
+expand_icon = true
+
+[node name="map3Button" type="Button" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 250.0
+offset_top = 362.0
+offset_right = 532.0
+offset_bottom = 523.0
+icon = ExtResource("5_e5eqe")
+icon_alignment = 1
+expand_icon = true
+
+[node name="map4Button" type="Button" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 616.0
+offset_top = 362.0
+offset_right = 898.0
+offset_bottom = 523.0
+icon = ExtResource("6_4eofj")
 icon_alignment = 1
 expand_icon = true
 
@@ -59,5 +83,7 @@ icon_alignment = 1
 expand_icon = true
 
 [connection signal="pressed" from="TextureRect/map1Button" to="." method="_on_map_1_button_pressed"]
-[connection signal="pressed" from="TextureRect/map2sButton" to="." method="_on_map_2s_button_pressed"]
+[connection signal="pressed" from="TextureRect/map2Button" to="." method="_on_map_2s_button_pressed"]
+[connection signal="pressed" from="TextureRect/map3Button" to="." method="_on_map_3_button_pressed"]
+[connection signal="pressed" from="TextureRect/map4Button" to="." method="_on_map_4_button_pressed"]
 [connection signal="pressed" from="TextureRect/BackButton" to="." method="_on_back_button_pressed"]

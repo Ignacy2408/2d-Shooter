@@ -15,5 +15,6 @@ var p1PosY = 0
 var p2PosX = 0
 var p2PosY = 0
 var gunPosession = ""
+var gamePaused = false
 func _process(delta):
 	pass

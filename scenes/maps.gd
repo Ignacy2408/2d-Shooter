@@ -12,7 +12,8 @@ func _process(_delta):
 
 
 func _ready():
-pass#	signale.connect("continueButton", self, "continueButton")
+	pass
+#	signale.connect("continueButton", self, "continueButton")
 
 func continueButton():
 	$GUI/inGameMenu.visible = false

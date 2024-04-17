@@ -23,6 +23,7 @@ font_size = 23
 script = ExtResource("1_26c4c")
 
 [node name="map1" parent="." instance=ExtResource("2_aec3i")]
+script = null
 
 [node name="Player1Spawner" type="Node2D" parent="."]
 script = ExtResource("1_mbtdp")

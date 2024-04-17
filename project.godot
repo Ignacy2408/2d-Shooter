@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameState="*res://scenes/game_state.gd"
-Signale="*res://scenes/Signale/signale.gd"
+Signals="*res://scenes/signals/signals.gd"
 
 [display]
 

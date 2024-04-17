@@ -12,8 +12,8 @@ func _process(_delta):
 
 
 func _ready():
-	signale.connect("continueButton", self, "continueButton")
+	Signals.connect("con", con)
 
-func continueButton():
+func con():
 	$GUI/inGameMenu.visible = false
 	Engine.time_scale = 1

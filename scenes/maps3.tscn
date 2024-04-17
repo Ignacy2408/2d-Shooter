@@ -1,0 +1,79 @@
+[gd_scene load_steps=14 format=3 uid="uid://c7vrj3j4rus3a"]
+
+[ext_resource type="PackedScene" uid="uid://uelbefonp50p" path="res://scenes/map_3.tscn" id="1_jk606"]
+[ext_resource type="Script" path="res://scenes/Player1Spawner.gd" id="2_6u13d"]
+[ext_resource type="PackedScene" uid="uid://dokq2dxwaavcg" path="res://scenes/Player1.tscn" id="3_a7nml"]
+[ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/sniper.tscn" id="4_u33ve"]
+[ext_resource type="Script" path="res://scenes/Player2Spawner.gd" id="5_rtrxu"]
+[ext_resource type="PackedScene" uid="uid://b5lq3k1mea4rh" path="res://scenes/Player2.tscn" id="6_hnsex"]
+[ext_resource type="Script" path="res://scenes/BoxSpawner.gd" id="7_yfyqm"]
+[ext_resource type="Script" path="res://scenes/Label.gd" id="8_jqu3i"]
+[ext_resource type="Script" path="res://scenes/p2LivesLabelLabel2.gd" id="9_cn6yb"]
+[ext_resource type="PackedScene" uid="uid://bbqc3a87e7k5h" path="res://scenes/gun_box.tscn" id="10_ra31e"]
+[ext_resource type="PackedScene" uid="uid://m4rcbscskg10" path="res://scenes/in_game_menu.tscn" id="11_gqpi8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hp2rv"]
+font_size = 23
+
+[sub_resource type="LabelSettings" id="LabelSettings_m4fqs"]
+font_size = 23
+
+[node name="maps3" type="Node2D"]
+
+[node name="map_3" parent="." instance=ExtResource("1_jk606")]
+
+[node name="Player1Spawner" type="Node2D" parent="."]
+script = ExtResource("2_6u13d")
+player1_tscn = ExtResource("3_a7nml")
+sniper_tscn = ExtResource("4_u33ve")
+
+[node name="Player1" parent="Player1Spawner" instance=ExtResource("3_a7nml")]
+texture_filter = 1
+position = Vector2(650, -60)
+
+[node name="Player2Spawner" type="Node2D" parent="."]
+position = Vector2(0, 2)
+script = ExtResource("5_rtrxu")
+player2_tscn = ExtResource("6_hnsex")
+sniper_tscn = ExtResource("4_u33ve")
+
+[node name="Player2" parent="Player2Spawner" instance=ExtResource("6_hnsex")]
+position = Vector2(500, -60)
+
+[node name="BoxSpawner" type="Node2D" parent="."]
+script = ExtResource("7_yfyqm")
+
+[node name="p1LivesLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 22.0
+offset_top = 9.0
+offset_right = 297.0
+offset_bottom = 79.0
+text = "P1 Lives: "
+label_settings = SubResource("LabelSettings_hp2rv")
+script = ExtResource("8_jqu3i")
+
+[node name="p2LivesLabelLabel2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 996.0
+offset_top = 7.0
+offset_right = 1136.0
+offset_bottom = 47.0
+text = "P2 Lives:"
+label_settings = SubResource("LabelSettings_m4fqs")
+script = ExtResource("9_cn6yb")
+
+[node name="GunBox" parent="." instance=ExtResource("10_ra31e")]
+position = Vector2(150, 309)
+
+[node name="GunSniper" parent="." instance=ExtResource("4_u33ve")]
+visible = false
+position = Vector2(409, 352)
+
+[node name="GunBox2" parent="." instance=ExtResource("10_ra31e")]
+position = Vector2(1000, 307)
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="inGameMenu" parent="GUI" instance=ExtResource("11_gqpi8")]
+visible = false

@@ -79,8 +79,8 @@ func _process(delta):
 			gunDirection = 1
 		
 		if (GameState.p1alive == true && GameState.p1HasGun == true):
-			self.position.x = GameState.p1PosX + (YOffset*gunDirection)
-			self.position.y = GameState.p1PosY + XOffset
+			self.position.x = GameState.p1PosX + (XOffset*gunDirection)
+			self.position.y = GameState.p1PosY + YOffset
 		if GameState.p1alive == false:
 			queue_free()
 #P2
@@ -92,13 +92,21 @@ func _process(delta):
 			$p2ReloadTimer.start()
 		if GameState.p2direction == false:
 			sniper_graphic.flip_h = true
+			ar_graphic.flip_h = true
+			smg_graphic.flip_h = true
+			pistol_graphic.flip_h = true
+			gunDirection = -1
 		elif GameState.p2direction:
 			sniper_graphic.flip_h = false
+			ar_graphic.flip_h = false
+			smg_graphic.flip_h = false
+			pistol_graphic.flip_h = false
+			gunDirection = 1
 			
 		
 		if (GameState.p2alive == true && GameState.p2HasGun == true):
-			self.position.x = GameState.p2PosX + (YOffset*gunDirection)
-			self.position.y = GameState.p2PosY + XOffset
+			self.position.x = GameState.p2PosX + (XOffset*gunDirection)
+			self.position.y = GameState.p2PosY + YOffset
 		if GameState.p2alive == false:
 			queue_free()
 
@@ -108,7 +116,7 @@ func shoot(playerType):
 #P1
 	var bullet = bulletPath.instantiate()
 	if playerType == "p1":
-		bullet.position.y = GameState.p1PosY + 10
+		bullet.position.y = GameState.p1PosY + YOffset - 5
 		
 		if GameState.p1direction == true:
 			bullet.position.x = GameState.p1PosX + 30
@@ -120,7 +128,7 @@ func shoot(playerType):
 			bullet.right = false
 #P2
 	elif playerType == "p2":
-		bullet.position.y = GameState.p2PosY + 10
+		bullet.position.y = GameState.p2PosY + YOffset - 5
 		if GameState.p2direction == true:
 			bullet.position.x = GameState.p2PosX + 30
 			bullet.right = true

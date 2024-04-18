@@ -38,7 +38,7 @@ position = Vector2(650, -60)
 position = Vector2(0, 2)
 script = ExtResource("5_qdsl0")
 player2_tscn = ExtResource("8_rq4or")
-sniper_tscn = ExtResource("7_j5a0p")
+weapon_tscn = ExtResource("7_j5a0p")
 
 [node name="Player2" parent="Player2Spawner" instance=ExtResource("8_rq4or")]
 position = Vector2(500, -60)

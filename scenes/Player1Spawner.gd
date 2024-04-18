@@ -33,20 +33,20 @@ func _process(_delta):
 		
 		if randNumb == 0:
 			new_p1Gun.gunType = "Sniper"
-			new_p1Gun.XOffset = 15
-			new_p1Gun.YOffset = 0
+			new_p1Gun.YOffset = 16
+			new_p1Gun.XOffset = 0
 		elif randNumb == 1:
 			new_p1Gun.gunType = "AR"
-			new_p1Gun.XOffset = 18
-			new_p1Gun.YOffset = 0
+			new_p1Gun.YOffset = 18
+			new_p1Gun.XOffset = 0
 		elif randNumb == 2:
 			new_p1Gun.gunType = "SMG"
-			new_p1Gun.XOffset = 18
-			new_p1Gun.YOffset = 0
+			new_p1Gun.YOffset = 18
+			new_p1Gun.XOffset = 0
 		elif randNumb == 3:
 			new_p1Gun.gunType = "Pistol"
-			new_p1Gun.XOffset = 18
-			new_p1Gun.YOffset = 20
+			new_p1Gun.YOffset = 18
+			new_p1Gun.XOffset = 20
 		print(new_p1Gun.gunType)
 		
 		

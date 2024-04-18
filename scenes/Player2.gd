@@ -58,7 +58,7 @@ func _process(delta):
 	GameState.p2PosX = self.position.x
 	GameState.p2PosY = self.position.y
 	
-	if self.position.y > 750:
+	if self.position.y > 750 || self.position.x > 1500 || self.position.x < -500:
 		GameState.p2alive = false
 		GameState.p2HasGun = false
 		GameState.p2lives -= 1

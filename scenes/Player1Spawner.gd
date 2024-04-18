@@ -21,12 +21,13 @@ func _process(_delta):
 		new_player1.position.x = 562
 		new_player1.position.y = -115
 		GameState.p1alive = true
-	if GameState.p1entered == true && GameState.p1HasGun == true:
+	if GameState.p1entered == true && GameState.p1NeedsGun == true:
 		
 		var randNumb = randi()%(3-(0-1))+0
 		var new_p1Gun = weapon_tscn.instantiate()
 		self.add_child(new_p1Gun)
-		
+		GameState.p1NeedsGun = false
+		GameState.p1HasGun = true
 		new_p1Gun.position.x = GameState.p1PosX
 		new_p1Gun.position.y = GameState.p1PosY - 900
 		new_p1Gun.thisGun = "Player 1"

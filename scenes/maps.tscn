@@ -46,6 +46,8 @@ position = Vector2(500, -60)
 [node name="BoxSpawner" type="Node2D" parent="."]
 script = ExtResource("6_t5s77")
 
+[node name="BoxSpawnTimer" type="Timer" parent="BoxSpawner"]
+
 [node name="p1LivesLabel" type="Label" parent="."]
 texture_filter = 1
 offset_left = 22.0
@@ -67,20 +69,23 @@ label_settings = SubResource("LabelSettings_nfs5r")
 script = ExtResource("10_0oomh")
 
 [node name="GunBox" parent="." instance=ExtResource("4_fkrp6")]
-position = Vector2(150, 125)
+visible = false
+position = Vector2(193, 461)
 
 [node name="GunSniper" parent="." instance=ExtResource("7_j5a0p")]
 visible = false
 position = Vector2(409, 352)
 
 [node name="GunBox2" parent="." instance=ExtResource("4_fkrp6")]
-position = Vector2(1000, 125)
+visible = false
+position = Vector2(959, 460)
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="inGameMenu" parent="GUI" instance=ExtResource("12_b5j4c")]
 visible = false
 
+[connection signal="timeout" from="BoxSpawner/BoxSpawnTimer" to="BoxSpawner" method="_on_box_spawn_timer_timeout"]
 [connection signal="body_entered" from="GunBox" to="Player1Spawner" method="_on_gun_box_body_entered"]
 [connection signal="body_entered" from="GunBox" to="Player2Spawner" method="_on_gun_box_body_entered"]
 [connection signal="body_entered" from="GunBox" to="GunSniper" method="_on_gun_box_body_entered"]

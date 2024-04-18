@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scenes/weapon.gd" id="1_sqqma"]
 [ext_resource type="Texture2D" uid="uid://bwihk8xawu5v5" path="res://guns_gameassets/PNG higher resolution (@2x)/sniper.png" id="2_7ays5"]
-[ext_resource type="Texture2D" uid="uid://bl6unxxill174" path="res://guns_gameassets/PNG/assaultrifle.png" id="3_l0etv"]
-[ext_resource type="Texture2D" uid="uid://bbcmnkafd4gbl" path="res://guns_gameassets/PNG/smg.png" id="4_m1pok"]
-[ext_resource type="Texture2D" uid="uid://b4hq2tq58maau" path="res://guns_gameassets/PNG/pistol2.png" id="5_hwldk"]
+[ext_resource type="Texture2D" uid="uid://on5agp3k6vt5" path="res://guns_gameassets/PNG higher resolution (@2x)/assaultrifle.png" id="3_ow878"]
+[ext_resource type="Texture2D" uid="uid://w5lwwdaqxg22" path="res://guns_gameassets/PNG higher resolution (@2x)/smg.png" id="4_hreyr"]
+[ext_resource type="Texture2D" uid="uid://cwh1x81jic6r" path="res://guns_gameassets/PNG higher resolution (@2x)/pistol2.png" id="5_yrnor"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2scrh"]
 
-[node name="Sniper" type="Node2D"]
+[node name="Weapon" type="Node2D"]
 position = Vector2(0, 18)
 script = ExtResource("1_sqqma")
 metadata/_edit_group_ = true
@@ -23,22 +23,23 @@ texture = ExtResource("2_7ays5")
 [node name="ARGraphic" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_l0etv")
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("3_ow878")
 
 [node name="SMGGraphic" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_m1pok")
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("4_hreyr")
 
 [node name="PistolGraphic" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_hwldk")
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("5_yrnor")
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1.001, 1.001)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(2, 2)

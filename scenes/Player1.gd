@@ -61,6 +61,7 @@ func _process(delta):
 	if self.position.y > 750 || self.position.x > 1500 || self.position.x < -500:
 		GameState.p1alive = false
 		GameState.p1HasGun = false
+		GameState.p1NeedsGun = false
 		GameState.p1lives -= 1
 		print(GameState.p1lives)
 		queue_free()

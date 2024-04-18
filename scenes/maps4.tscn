@@ -27,7 +27,6 @@ script = ExtResource("1_lqwrj")
 [node name="Player1Spawner" type="Node2D" parent="."]
 script = ExtResource("2_uymbo")
 player1_tscn = ExtResource("3_x8f4a")
-sniper_tscn = ExtResource("4_ktlyv")
 
 [node name="Player1" parent="Player1Spawner" instance=ExtResource("3_x8f4a")]
 texture_filter = 1

@@ -1,7 +1,8 @@
 extends Node2D
 
 @export var player1_tscn: PackedScene 
-@export var sniper_tscn: PackedScene
+@export var weapon_tscn: PackedScene
+
 
 
 
@@ -21,12 +22,32 @@ func _process(_delta):
 		new_player1.position.y = -115
 		GameState.p1alive = true
 	if GameState.p1entered == true && GameState.p1HasGun == true:
-		GameState.gunPosession = ""
-		var new_p1Gun = sniper_tscn.instantiate()
+		
+		var randNumb = randi()%(3-(0-1))+0
+		var new_p1Gun = weapon_tscn.instantiate()
 		self.add_child(new_p1Gun)
+		
 		new_p1Gun.position.x = GameState.p1PosX
-		new_p1Gun.position.y = GameState.p1PosY
-		new_p1Gun.thisSniper = "Player 1"
+		new_p1Gun.position.y = GameState.p1PosY - 900
+		new_p1Gun.thisGun = "Player 1"
+		
+		if randNumb == 0:
+			new_p1Gun.gunType = "Sniper"
+			new_p1Gun.XOffset = 15
+			new_p1Gun.YOffset = 0
+		elif randNumb == 1:
+			new_p1Gun.gunType = "AR"
+			new_p1Gun.XOffset = 18
+			new_p1Gun.YOffset = 0
+		elif randNumb == 2:
+			new_p1Gun.gunType = "SMG"
+			new_p1Gun.XOffset = 18
+			new_p1Gun.YOffset = 0
+		elif randNumb == 3:
+			new_p1Gun.gunType = "Pistol"
+			new_p1Gun.XOffset = 18
+			new_p1Gun.YOffset = 20
+		print(new_p1Gun.gunType)
 		
 		
 		GameState.p1entered = false

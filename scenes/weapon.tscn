@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx8bi7a0c7fih"]
+[gd_scene load_steps=7 format=3 uid="uid://bx8bi7a0c7fih"]
 
 [ext_resource type="Script" path="res://scenes/weapon.gd" id="1_sqqma"]
 [ext_resource type="Texture2D" uid="uid://bwihk8xawu5v5" path="res://guns_gameassets/PNG higher resolution (@2x)/sniper.png" id="2_7ays5"]
+[ext_resource type="Texture2D" uid="uid://bl6unxxill174" path="res://guns_gameassets/PNG/assaultrifle.png" id="3_l0etv"]
+[ext_resource type="Texture2D" uid="uid://bbcmnkafd4gbl" path="res://guns_gameassets/PNG/smg.png" id="4_m1pok"]
+[ext_resource type="Texture2D" uid="uid://b4hq2tq58maau" path="res://guns_gameassets/PNG/pistol2.png" id="5_hwldk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2scrh"]
 
@@ -11,10 +14,29 @@ script = ExtResource("1_sqqma")
 metadata/_edit_group_ = true
 
 [node name="SniperGraphic" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.135986, 0.0967715)
 texture = ExtResource("2_7ays5")
+
+[node name="ARGraphic" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_l0etv")
+
+[node name="SMGGraphic" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_m1pok")
+
+[node name="PistolGraphic" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_hwldk")
 
 [node name="Area2D" type="Area2D" parent="."]
 

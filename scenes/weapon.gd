@@ -102,3 +102,8 @@ func _on_reload_timer_timeout():
 func _on_p_2_reload_timer_timeout():
 	if thisSniper == "Player 2":
 		p2ReadyToShoot = true
+
+
+func _on_area_2d_area_entered(area):
+	if area.name == "GunBox"|| area.name == "GunBox2":
+		queue_free()

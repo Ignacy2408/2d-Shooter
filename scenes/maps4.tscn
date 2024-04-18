@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/maps4.gd" id="1_lqwrj"]
 [ext_resource type="Script" path="res://scenes/Player1Spawner.gd" id="2_uymbo"]
 [ext_resource type="PackedScene" uid="uid://dokq2dxwaavcg" path="res://scenes/Player1.tscn" id="3_x8f4a"]
-[ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/sniper.tscn" id="4_ktlyv"]
+[ext_resource type="PackedScene" uid="uid://bx8bi7a0c7fih" path="res://scenes/weapon.tscn" id="4_ktlyv"]
 [ext_resource type="Script" path="res://scenes/Player2Spawner.gd" id="5_r0ry2"]
 [ext_resource type="PackedScene" uid="uid://b5lq3k1mea4rh" path="res://scenes/Player2.tscn" id="6_rbvoq"]
 [ext_resource type="Script" path="res://scenes/BoxSpawner.gd" id="7_meqnh"]

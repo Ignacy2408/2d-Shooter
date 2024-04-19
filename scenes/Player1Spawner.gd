@@ -6,6 +6,7 @@ extends Node2D
 
 
 
+
 func _on_gun_box_body_entered(body):
 	pass
 
@@ -17,6 +18,7 @@ func _process(_delta):
 	#P1
 	var new_player1 = player1_tscn.instantiate()
 	if (GameState.p1alive == false && GameState.p1lives > 0):
+		
 		self.add_child(new_player1)
 		new_player1.position.x = 562
 		new_player1.position.y = -115
@@ -48,6 +50,7 @@ func _process(_delta):
 			new_p1Gun.gunType = "Pistol"
 			new_p1Gun.YOffset = 18
 			new_p1Gun.XOffset = 20
+			
 		print(new_p1Gun.gunType)
 		
 		

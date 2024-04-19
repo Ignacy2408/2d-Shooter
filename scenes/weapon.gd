@@ -11,11 +11,17 @@ var p1ReadyToShoot = true
 var p2ReadyToShoot = true
 @onready var thisGun = ""
 @onready var gunType = ""
+var spawning = false
 
 var XOffset = 0
 var YOffset = 0
 var gunDirection = 1
 
+
+
+func _ready():
+	GameState.p1NeedsGun = false
+	GameState.p1HasGun = true
 
 
 func _on_gun_box_body_entered(body):
@@ -31,6 +37,7 @@ func _on_gun_box_body_entered(body):
 	
 func _process(delta):
 
+	
 
 	if gunType == "Sniper":
 		sniper_graphic.visible = true
@@ -83,6 +90,8 @@ func _process(delta):
 		if (GameState.p1alive == true && GameState.p1HasGun == true):
 			self.position.x = GameState.p1PosX + (XOffset*gunDirection)
 			self.position.y = GameState.p1PosY + YOffset
+			$Area2D.position.x = - XOffset * gunDirection
+			#$Area2D.position.x = self.position.x - (XOffset *gunDirection)
 		if GameState.p1alive == false:
 			queue_free()
 		#if GameState.p1HasGun == true && GameState.p1NeedsGun == false:
@@ -113,7 +122,8 @@ func _process(delta):
 			self.position.y = GameState.p2PosY + YOffset
 		if GameState.p2alive == false:
 			queue_free()
-			
+		if spawning == true:
+			queue_free()
 		
 
 
@@ -164,5 +174,7 @@ func _on_area_2d_area_entered(area):
 			GameState.p1HasGun = false
 		elif thisGun == "Player 2":
 			GameState.p2HasGun = false
+		print("gun deleted")
 		queue_free()
+		
 		

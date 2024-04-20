@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cwh1x81jic6r" path="res://guns_gameassets/PNG higher resolution (@2x)/pistol2.png" id="5_yrnor"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2scrh"]
-size = Vector2(24.7475, 17.5758)
+size = Vector2(21.7172, 29.7977)
 
 [node name="Weapon" type="Node2D"]
 position = Vector2(0, 10)
@@ -43,7 +43,7 @@ texture = ExtResource("5_yrnor")
 scale = Vector2(1.1, 1.1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2.08165e-12, -2.182)
+position = Vector2(2.08165e-12, -13.1821)
 scale = Vector2(1.8, 1.8)
 shape = SubResource("RectangleShape2D_2scrh")
 

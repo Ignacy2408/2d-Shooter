@@ -157,6 +157,16 @@ func shoot(playerType):
 			bullet.position.x = GameState.p2PosX - 30
 			bullet.right = false
 		bullet.thisBullet = "Player 2"
+		
+	if gunType == "Sniper":
+		bullet.knockback_strength = 1500
+	elif gunType == "AR":
+		bullet.knockback_strength = 1100
+	elif gunType == "SMG":
+		bullet.knockback_strength = 700
+	elif gunType == "Pistol":
+		bullet.knockback_strength = 900
+		
 	get_parent().add_child(bullet)
 
 

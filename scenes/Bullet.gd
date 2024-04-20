@@ -6,7 +6,7 @@ var right = true
 var direction = Vector2.ZERO
 var thisBullet
 var dir = 1
-@export var knockback_strength = 800
+var knockback_strength = 800
 func _ready(): 
 	self.name = name + "Bullet"
 

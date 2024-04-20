@@ -7,6 +7,11 @@ const JUMP_VELOCITY = -750.0
 @export var changeSpeed = 150
 var alive = true;
 var current_weapon: Node2D
+var recieves_knockback = false
+var knockback = 0
+var second_jump = false
+var knockback_direction = 1
+
 #@onready var weapons: Node2D = get_node("Weapons/Sniper")
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -29,10 +34,14 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		sprite_2d.animation = "jumping"
+		if Input.is_action_just_pressed("p2Jump") && second_jump == true:
+			velocity.y = JUMP_VELOCITY
+			second_jump = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("p2Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		second_jump = true
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -53,6 +62,9 @@ func _physics_process(delta):
 		sprite_2d.flip_h = false
 		
 		
+		
+func _ready():
+	$KnockbackTimer2.wait_time = 0.5
 func _process(delta):
 	
 	GameState.p2PosX = self.position.x
@@ -61,6 +73,7 @@ func _process(delta):
 	if self.position.y > 750 || self.position.x > 1500 || self.position.x < -500:
 		GameState.p2alive = false
 		GameState.p2HasGun = false
+		GameState.p2NeedsGun = false
 		GameState.p2lives -= 1
 		print(GameState.p2lives)
 		queue_free()
@@ -68,4 +81,24 @@ func _process(delta):
 		GameState.p2direction = false
 	elif (velocity.x > 0): 
 		GameState.p2direction = true
+		
+	if recieves_knockback == true:
+	
+		position.x += knockback * delta
+		knockback -= 20 * knockback_direction
+		
+		
+func recieve_knockback(direction: int ,knockback_strength: int ):
+	
+	knockback_direction = direction
+	print(direction)
+	knockback = knockback_direction * knockback_strength
+	recieves_knockback = true
+	print(recieves_knockback)
+	$KnockbackTimer2.start()
+
+
+
+func _on_knockback_timer_timeout():
+	recieves_knockback = false
 	

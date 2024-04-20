@@ -22,5 +22,5 @@ var Box2Free = true
 var Box3Free = true
 var p1NeedsGun = false
 var p2NeedsGun = false
-func _process(delta):
+func _process(_delta):
 	pass

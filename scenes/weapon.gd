@@ -120,6 +120,7 @@ func _process(delta):
 		if (GameState.p2alive == true && GameState.p2HasGun == true):
 			self.position.x = GameState.p2PosX + (XOffset*gunDirection)
 			self.position.y = GameState.p2PosY + YOffset
+			$Area2D.position.x = - XOffset * gunDirection
 		if GameState.p2alive == false:
 			queue_free()
 		if spawning == true:
@@ -142,6 +143,8 @@ func shoot(playerType):
 		
 			bullet.position.x = GameState.p1PosX - 30
 			bullet.right = false
+		bullet.thisBullet = "Player 1"
+	
 #P2
 	elif playerType == "p2":
 		bullet.position.y = GameState.p2PosY + YOffset - 5
@@ -153,6 +156,7 @@ func shoot(playerType):
 		
 			bullet.position.x = GameState.p2PosX - 30
 			bullet.right = false
+		bullet.thisBullet = "Player 2"
 	get_parent().add_child(bullet)
 
 

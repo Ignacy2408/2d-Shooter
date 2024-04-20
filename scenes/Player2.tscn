@@ -209,5 +209,5 @@ shape = SubResource("RectangleShape2D_7wrab")
 [node name="KnockbackTimer2" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="timeout" from="KnockbackTimer2" to="." method="_on_knockback_timer_2_timeout"]
 [connection signal="timeout" from="KnockbackTimer2" to="." method="_on_knockback_timer_timeout"]
+[connection signal="timeout" from="KnockbackTimer2" to="." method="_on_knockback_timer_2_timeout"]

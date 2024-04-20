@@ -34,6 +34,7 @@ func _process(_delta):
 		new_p1Gun.position.y = GameState.p1PosY - 900
 		new_p1Gun.thisGun = "Player 1"
 		
+		
 		if randNumb == 0:
 			new_p1Gun.gunType = "Sniper"
 			new_p1Gun.YOffset = 16

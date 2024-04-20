@@ -71,8 +71,11 @@ func _process(delta):
 		GameState.p1alive = false
 		GameState.p1HasGun = false
 		GameState.p1NeedsGun = false
+		if GameState.p1lives == 1:
+			GameState.gameOver = 0
 		GameState.p1lives -= 1
 		print(GameState.p1lives)
+		
 		queue_free()
 	if (velocity.x < 0):
 		GameState.p1direction = false

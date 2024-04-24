@@ -1,7 +1,7 @@
 extends Area2D
 
 
-@export var bullet_speed = 500
+@export var bullet_speed = 700
 var right = true
 var direction = Vector2.ZERO
 var thisBullet

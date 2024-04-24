@@ -4,7 +4,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()
 		
-	if GameState.gameOver == 0||GameState.gameOver == 2||GameState.gameOver == 3:
+	if GameState.gameState == 0||GameState.gameState == 2||GameState.gameState == 3:
 		GameState.p1lives = GameState.p1lives
 		GameState.p2lives = GameState.p2lives
 		
@@ -16,23 +16,23 @@ func _process(_delta):
 		
 	if GameState.p1lives == 0:
 		
-		if GameState.gameOver == 0:
+		if GameState.gameState == 0:
 			$GameOverLabel.visible = true
 			$p2Wins.visible = true
 			$p1Wins.visible = false
 			$GameOverTimer.start()
 			print("timer start")
-			GameState.gameOver = 3
+			GameState.gameState = 3
 		
 	elif GameState.p2lives == 0:
-		if GameState.gameOver == 2:
+		if GameState.gameState == 2:
 			$GameOverLabel.visible = true
 			$p1Wins.visible = true
 			$p2Wins.visible = false
 			$GameOverTimer.start()
 			print("timer start")
-			GameState.gameOver = 3
-		print(GameState.gameOver)
+			GameState.gameState = 3
+		print(GameState.gameState)
 		
 		
 

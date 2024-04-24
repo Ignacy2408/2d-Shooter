@@ -22,7 +22,7 @@ var Box2Free = true
 var Box3Free = true
 var p1NeedsGun = false
 var p2NeedsGun = false
-var gameOver = 1
+var gameState = 1
 var p1Winner = false
 var p2Winner = false
 func _process(_delta):
@@ -41,4 +41,4 @@ func start_over():
 	p2PosY = -115
 	p1Winner = false
 	p2Winner = false
-	gameOver = 1
+	gameState = 1

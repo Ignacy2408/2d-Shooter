@@ -45,24 +45,28 @@ func _process(delta):
 		smg_graphic.visible = false
 		pistol_graphic.visible = false
 		$p1ReloadTimer.wait_time = 0.7
+		$p2ReloadTimer.wait_time = 0.7
 	elif gunType == "AR":
 		sniper_graphic.visible = false
 		ar_graphic.visible = true
 		smg_graphic.visible = false
 		pistol_graphic.visible = false
 		$p1ReloadTimer.wait_time = 0.4
+		$p2ReloadTimer.wait_time = 0.4
 	elif gunType == "SMG":
 		sniper_graphic.visible = false
 		ar_graphic.visible = false
 		smg_graphic.visible = true
 		pistol_graphic.visible = false
 		$p1ReloadTimer.wait_time = 0.1
+		$p2ReloadTimer.wait_time = 0.1
 	elif gunType == "Pistol":
 		sniper_graphic.visible = false
 		ar_graphic.visible = false
 		smg_graphic.visible = false
 		pistol_graphic.visible = true
 		$p1ReloadTimer.wait_time = 0.55
+		$p2ReloadTimer.wait_time = 0.55
 
 #P1
 	if thisGun == "Player 1":
@@ -159,13 +163,13 @@ func shoot(playerType):
 		bullet.thisBullet = "Player 2"
 		
 	if gunType == "Sniper":
-		bullet.knockback_strength = 1500
+		bullet.knockback_strength = 1800
 	elif gunType == "AR":
-		bullet.knockback_strength = 1100
+		bullet.knockback_strength = 1400
 	elif gunType == "SMG":
-		bullet.knockback_strength = 700
+		bullet.knockback_strength = 950
 	elif gunType == "Pistol":
-		bullet.knockback_strength = 900
+		bullet.knockback_strength = 1150
 		
 	get_parent().add_child(bullet)
 

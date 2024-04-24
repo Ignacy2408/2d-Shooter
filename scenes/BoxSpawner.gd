@@ -32,6 +32,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("testBox"):
 		var box = boxPath.instantiate()
 		get_parent().add_child(box)
+		if GameState.gameState == 0||GameState.gameState == 2||GameState.gameState == 3:
+			$BoxSpawnTimer.wait_time = randTimeSpawn
+			$BoxSpawnTimer.start()
 		
 
 
@@ -76,3 +79,5 @@ func _on_box_spawn_timer_timeout():
 	
 	$BoxSpawnTimer.wait_time = randTimeSpawn
 	$BoxSpawnTimer.start()
+	
+	

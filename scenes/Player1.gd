@@ -72,7 +72,7 @@ func _process(delta):
 		GameState.p1HasGun = false
 		GameState.p1NeedsGun = false
 		if GameState.p1lives == 1:
-			GameState.gameOver = 0
+			GameState.gameState = 0
 		GameState.p1lives -= 1
 		print(GameState.p1lives)
 		

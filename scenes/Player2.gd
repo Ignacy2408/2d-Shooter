@@ -75,7 +75,7 @@ func _process(delta):
 		GameState.p2HasGun = false
 		GameState.p2NeedsGun = false
 		if GameState.p2lives == 1:
-			GameState.gameOver = 2
+			GameState.gameState = 2
 		GameState.p2lives -= 1
 		print(GameState.p2lives)
 		queue_free()

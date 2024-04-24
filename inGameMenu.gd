@@ -6,6 +6,7 @@ func _on_continue_button_pressed():
 	Signals.emit_signal("con")
 
 
+
 func _on_settings_button_pressed():
 	$InputSettings.visible = true
 	$Panel.visible = false
@@ -13,6 +14,9 @@ func _on_settings_button_pressed():
 
 func _on_exit_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	Signals.emit_signal("con")
+	GameState.start_over()
+
 
 
 

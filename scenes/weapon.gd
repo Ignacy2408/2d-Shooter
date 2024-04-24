@@ -11,11 +11,17 @@ var p1ReadyToShoot = true
 var p2ReadyToShoot = true
 @onready var thisGun = ""
 @onready var gunType = ""
+var spawning = false
 
 var XOffset = 0
 var YOffset = 0
 var gunDirection = 1
 
+
+
+func _ready():
+	GameState.p1NeedsGun = false
+	GameState.p1HasGun = true
 
 
 func _on_gun_box_body_entered(body):
@@ -31,6 +37,7 @@ func _on_gun_box_body_entered(body):
 	
 func _process(delta):
 
+	
 
 	if gunType == "Sniper":
 		sniper_graphic.visible = true
@@ -43,7 +50,7 @@ func _process(delta):
 		ar_graphic.visible = true
 		smg_graphic.visible = false
 		pistol_graphic.visible = false
-		$p1ReloadTimer.wait_time = 0.3
+		$p1ReloadTimer.wait_time = 0.4
 	elif gunType == "SMG":
 		sniper_graphic.visible = false
 		ar_graphic.visible = false
@@ -55,7 +62,7 @@ func _process(delta):
 		ar_graphic.visible = false
 		smg_graphic.visible = false
 		pistol_graphic.visible = true
-		$p1ReloadTimer.wait_time = 0.4
+		$p1ReloadTimer.wait_time = 0.55
 
 #P1
 	if thisGun == "Player 1":
@@ -64,6 +71,8 @@ func _process(delta):
 			p1ReadyToShoot = false
 			shoot("p1")
 			$p1ReloadTimer.start()
+			
+		
 			
 		if GameState.p1direction == false:
 			sniper_graphic.flip_h = true
@@ -81,8 +90,12 @@ func _process(delta):
 		if (GameState.p1alive == true && GameState.p1HasGun == true):
 			self.position.x = GameState.p1PosX + (XOffset*gunDirection)
 			self.position.y = GameState.p1PosY + YOffset
+			$Area2D.position.x = - XOffset * gunDirection
+			#$Area2D.position.x = self.position.x - (XOffset *gunDirection)
 		if GameState.p1alive == false:
 			queue_free()
+		#if GameState.p1HasGun == true && GameState.p1NeedsGun == false:
+		#	self.queue_free()
 #P2
 	elif thisGun == "Player 2":
 		
@@ -107,8 +120,12 @@ func _process(delta):
 		if (GameState.p2alive == true && GameState.p2HasGun == true):
 			self.position.x = GameState.p2PosX + (XOffset*gunDirection)
 			self.position.y = GameState.p2PosY + YOffset
+			$Area2D.position.x = - XOffset * gunDirection
 		if GameState.p2alive == false:
 			queue_free()
+		if spawning == true:
+			queue_free()
+		
 
 
 
@@ -126,6 +143,8 @@ func shoot(playerType):
 		
 			bullet.position.x = GameState.p1PosX - 30
 			bullet.right = false
+		bullet.thisBullet = "Player 1"
+	
 #P2
 	elif playerType == "p2":
 		bullet.position.y = GameState.p2PosY + YOffset - 5
@@ -137,6 +156,17 @@ func shoot(playerType):
 		
 			bullet.position.x = GameState.p2PosX - 30
 			bullet.right = false
+		bullet.thisBullet = "Player 2"
+		
+	if gunType == "Sniper":
+		bullet.knockback_strength = 1500
+	elif gunType == "AR":
+		bullet.knockback_strength = 1100
+	elif gunType == "SMG":
+		bullet.knockback_strength = 700
+	elif gunType == "Pistol":
+		bullet.knockback_strength = 900
+		
 	get_parent().add_child(bullet)
 
 
@@ -153,5 +183,12 @@ func _on_p_2_reload_timer_timeout():
 
 
 func _on_area_2d_area_entered(area):
-	if area.name == "GunBox"|| area.name == "GunBox2":
+	if "GunBox" in area.name:
+		if thisGun == "Player 1":
+			GameState.p1HasGun = false
+		elif thisGun == "Player 2":
+			GameState.p2HasGun = false
+		print("gun deleted")
 		queue_free()
+		
+		

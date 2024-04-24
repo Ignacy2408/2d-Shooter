@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://deuv5ay7440ah"]
+[gd_scene load_steps=17 format=3 uid="uid://deuv5ay7440ah"]
 
 [ext_resource type="Script" path="res://scenes/maps.gd" id="1_26c4c"]
 [ext_resource type="Script" path="res://scenes/Player1Spawner.gd" id="1_mbtdp"]
@@ -18,6 +18,14 @@ font_size = 23
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfs5r"]
 font_size = 23
+
+[sub_resource type="LabelSettings" id="LabelSettings_ip8dd"]
+font_size = 80
+outline_size = 8
+shadow_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_08u8k"]
+font_size = 48
 
 [node name="maps" type="Node2D"]
 script = ExtResource("1_26c4c")
@@ -46,6 +54,8 @@ position = Vector2(500, -60)
 [node name="BoxSpawner" type="Node2D" parent="."]
 script = ExtResource("6_t5s77")
 
+[node name="BoxSpawnTimer" type="Timer" parent="BoxSpawner"]
+
 [node name="p1LivesLabel" type="Label" parent="."]
 texture_filter = 1
 offset_left = 22.0
@@ -67,20 +77,60 @@ label_settings = SubResource("LabelSettings_nfs5r")
 script = ExtResource("10_0oomh")
 
 [node name="GunBox" parent="." instance=ExtResource("4_fkrp6")]
-position = Vector2(150, 125)
+visible = false
+position = Vector2(193, 461)
 
 [node name="GunSniper" parent="." instance=ExtResource("7_j5a0p")]
 visible = false
 position = Vector2(409, 352)
 
 [node name="GunBox2" parent="." instance=ExtResource("4_fkrp6")]
-position = Vector2(1000, 125)
+visible = false
+position = Vector2(959, 460)
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="inGameMenu" parent="GUI" instance=ExtResource("12_b5j4c")]
 visible = false
 
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="GameOverLabel" type="Label" parent="."]
+visible = false
+offset_left = 280.0
+offset_top = -36.0
+offset_right = 860.0
+offset_bottom = 280.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_ip8dd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p1Wins" type="Label" parent="."]
+visible = false
+offset_left = 416.0
+offset_top = 478.0
+offset_right = 737.0
+offset_bottom = 545.0
+text = "Player 1 Wins!"
+label_settings = SubResource("LabelSettings_08u8k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p2Wins" type="Label" parent="."]
+visible = false
+offset_left = 416.0
+offset_top = 478.0
+offset_right = 737.0
+offset_bottom = 545.0
+text = "Player 2 Wins!"
+label_settings = SubResource("LabelSettings_08u8k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="BoxSpawner/BoxSpawnTimer" to="BoxSpawner" method="_on_box_spawn_timer_timeout"]
 [connection signal="body_entered" from="GunBox" to="Player1Spawner" method="_on_gun_box_body_entered"]
 [connection signal="body_entered" from="GunBox" to="Player2Spawner" method="_on_gun_box_body_entered"]
 [connection signal="body_entered" from="GunBox" to="GunSniper" method="_on_gun_box_body_entered"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

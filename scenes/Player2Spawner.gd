@@ -20,12 +20,15 @@ func _process(_delta):
 		new_player2.position.x = 562
 		new_player2.position.y = -115
 		GameState.p2alive = true
-	if GameState.p2entered == true && GameState.p2HasGun == true:
+	if GameState.p2entered == true && GameState.p2NeedsGun == true:
 		
 		
 		var new_p2Gun = weapon_tscn.instantiate()
 		self.add_child(new_p2Gun)
 		var randNumb = randi()%(3-(0-1))+0
+		
+		GameState.p2HasGun = true
+		GameState.p2NeedsGun = false
 		
 		new_p2Gun.position.x = GameState.p2PosX
 		new_p2Gun.position.y = GameState.p2PosY - 900

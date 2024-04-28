@@ -20,6 +20,17 @@ var Box0Free = true
 var Box1Free = true
 var Box2Free = true
 var Box3Free = true
+
+var ItemBox0Free = true
+var ItemBox1Free = true
+var ItemBox2Free = true
+var ItemBox3Free = true
+var Item = null
+
+var p1SpeedItem = false
+var p2SpeedItem = false
+
+
 var p1NeedsGun = false
 var p2NeedsGun = false
 var gameState = 1

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 400.0
+var SPEED = 400.0
 const JUMP_VELOCITY = -750.0
 @onready var sprite_2d = $Frog_Character
 @export var changeSpeed = 150
@@ -22,6 +22,16 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
+	
+	if GameState.p2SpeedItem:
+		SPEED = 500
+		$SpeedItemP2.wait_time = 3
+		$SpeedItemP2.start()
+	elif GameState.p2SpeedItem == false:
+		SPEED = 400
+	
+	
+	
 	
 	#Animaitons
 	
@@ -67,6 +77,9 @@ func _ready():
 	$KnockbackTimer2.wait_time = 0.5
 func _process(delta):
 	
+	if GameState.p2SpeedItem:
+		SPEED = 500
+	
 	GameState.p2PosX = self.position.x
 	GameState.p2PosY = self.position.y
 	
@@ -105,3 +118,7 @@ func recieve_knockback(direction: int ,knockback_strength: int ):
 func _on_knockback_timer_timeout():
 	recieves_knockback = false
 	
+
+
+func _on_speed_item_p_2_timeout():
+	GameState.p2SpeedItem = false

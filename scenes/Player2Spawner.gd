@@ -14,6 +14,7 @@ func _on_gun_box_body_entered(body):
 
 func _process(_delta):
 	
+	
 	var new_player2 = player2_tscn.instantiate()
 	if (GameState.p2alive == false && GameState.p2lives > 0):
 		self.add_child(new_player2)

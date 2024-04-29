@@ -25,6 +25,8 @@ var ItemBox0Free = true
 var ItemBox1Free = true
 var ItemBox2Free = true
 var ItemBox3Free = true
+var p1third_jump = false
+var p2third_jump = false
 var Item = null
 
 var p1SpeedItem = false

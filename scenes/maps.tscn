@@ -45,6 +45,9 @@ texture_filter = 1
 position = Vector2(650, -60)
 
 [node name="SpeedItemP1" type="Timer" parent="Player1Spawner/Player1"]
+one_shot = true
+
+[node name="JumpItemP1" type="Timer" parent="Player1Spawner/Player1"]
 
 [node name="Player2Spawner" type="Node2D" parent="."]
 position = Vector2(0, 2)
@@ -56,6 +59,9 @@ weapon_tscn = ExtResource("7_j5a0p")
 position = Vector2(500, -60)
 
 [node name="SpeedItemP2" type="Timer" parent="Player2Spawner/Player2"]
+one_shot = true
+
+[node name="JumpItemP2" type="Timer" parent="Player2Spawner/Player2"]
 
 [node name="BoxSpawner" type="Node2D" parent="."]
 script = ExtResource("6_t5s77")
@@ -143,7 +149,9 @@ script = ExtResource("13_e0jkl")
 [node name="Items" parent="." instance=ExtResource("14_tj1nq")]
 
 [connection signal="timeout" from="Player1Spawner/Player1/SpeedItemP1" to="Player1Spawner/Player1" method="_on_speed_item_p_1_timeout"]
+[connection signal="timeout" from="Player1Spawner/Player1/JumpItemP1" to="Player1Spawner/Player1" method="_on_jump_item_p_1_timeout"]
 [connection signal="timeout" from="Player2Spawner/Player2/SpeedItemP2" to="Player2Spawner/Player2" method="_on_speed_item_p_2_timeout"]
+[connection signal="timeout" from="Player2Spawner/Player2/JumpItemP2" to="Player2Spawner/Player2" method="_on_jump_item_p_2_timeout"]
 [connection signal="timeout" from="BoxSpawner/BoxSpawnTimer" to="BoxSpawner" method="_on_box_spawn_timer_timeout"]
 [connection signal="body_entered" from="GunBox" to="Player1Spawner" method="_on_gun_box_body_entered"]
 [connection signal="body_entered" from="GunBox" to="Player2Spawner" method="_on_gun_box_body_entered"]

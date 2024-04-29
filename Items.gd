@@ -29,6 +29,8 @@ func _ready():
 		$CollisionShape2D/Heart.visible = false
 		$CollisionShape2D/jump.visible = true 
 		GameState.Item = "jump"
+	
+
 
 
 var thisBox = ""
@@ -53,15 +55,28 @@ func _on_body_entered(body):
 		elif body.name == "Player2":
 			GameState.p2lives += 1
 
+	print("Item aufgesammelt")
+
 	if randItem == 1:
 		if body.name == "Player1":
-			GameState.p1SpeedItem = true
+			Signals.emit_signal("p1Speed")
 		elif body.name == "Player2":
-			GameState.p2SpeedItem = true
+			Signals.emit_signal("p2Speed")
+	
+	if randItem == 3:
+		if body.name == "Player1":
+			Signals.emit_signal("p1Jump")
+		elif body.name == "Player2":
+			Signals.emit_signal("p2Jump")
+			
+	
+	
 	
 	if body.name == "Player1" || "Player2":
 		queue_free()
 	
+	
+
 
 
 

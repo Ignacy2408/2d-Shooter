@@ -10,6 +10,8 @@ var current_weapon: Node2D
 var recieves_knockback = false
 var knockback = 0
 var second_jump = false
+var third_jump = false
+var jump_item = false
 var knockback_direction = 1
 
 #@onready var weapons: Node2D = get_node("Weapons/Sniper")
@@ -23,12 +25,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	
-	if GameState.p2SpeedItem:
-		SPEED = 500
-		$SpeedItemP2.wait_time = 3
-		$SpeedItemP2.start()
-	elif GameState.p2SpeedItem == false:
-		SPEED = 400
+	
 	
 	
 	
@@ -47,11 +44,16 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("p2Jump") && second_jump == true:
 			velocity.y = JUMP_VELOCITY
 			second_jump = false
+		elif Input.is_action_just_pressed("p2Jump") && third_jump == true:
+			velocity.y = JUMP_VELOCITY
+			third_jump = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("p2Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		second_jump = true
+		if jump_item == true:
+			third_jump = true
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -75,10 +77,27 @@ func _physics_process(delta):
 		
 func _ready():
 	$KnockbackTimer2.wait_time = 0.5
+	
+	$SpeedItemP2.wait_time = 3
+	$JumpItemP2.wait_time = 10
+	
+	Signals.connect("p2Speed", p2Speed)
+	Signals.connect("p2Jump", p2Jump)
+
+func p2Speed():
+	$SpeedItemP2.start()
+	SPEED = 800
+	
+
+func p2Jump():
+	jump_item = true
+	third_jump = true
+	$JumpItemP2.start()
+
+
 func _process(delta):
 	
-	if GameState.p2SpeedItem:
-		SPEED = 500
+
 	
 	GameState.p2PosX = self.position.x
 	GameState.p2PosY = self.position.y
@@ -121,4 +140,9 @@ func _on_knockback_timer_timeout():
 
 
 func _on_speed_item_p_2_timeout():
-	GameState.p2SpeedItem = false
+	SPEED = 400
+
+
+func _on_jump_item_p_2_timeout():
+	jump_item = false
+	third_jump = false

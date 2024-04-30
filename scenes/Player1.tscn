@@ -209,4 +209,11 @@ shape = SubResource("RectangleShape2D_7wrab")
 [node name="KnockbackTimer" type="Timer" parent="."]
 wait_time = 1.41
 
+[node name="SpeedItemP1" type="Timer" parent="."]
+one_shot = true
+
+[node name="JumpItemP1" type="Timer" parent="."]
+
 [connection signal="timeout" from="KnockbackTimer" to="." method="_on_knockback_timer_timeout"]
+[connection signal="timeout" from="SpeedItemP1" to="." method="_on_speed_item_p_1_timeout"]
+[connection signal="timeout" from="JumpItemP1" to="." method="_on_jump_item_p_1_timeout"]

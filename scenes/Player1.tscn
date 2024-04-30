@@ -192,6 +192,7 @@ size = Vector2(37, 48)
 
 [node name="Player1" type="CharacterBody2D"]
 script = ExtResource("1_c7lcq")
+changeSpeed = null
 metadata/_edit_group_ = true
 
 [node name="Frog_Character" type="AnimatedSprite2D" parent="."]
@@ -209,4 +210,7 @@ shape = SubResource("RectangleShape2D_7wrab")
 [node name="KnockbackTimer" type="Timer" parent="."]
 wait_time = 1.41
 
+[node name="Shild" type="Timer" parent="."]
+
 [connection signal="timeout" from="KnockbackTimer" to="." method="_on_knockback_timer_timeout"]
+[connection signal="timeout" from="Shild" to="." method="_on_shild_timeout"]

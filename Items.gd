@@ -70,7 +70,12 @@ func _on_body_entered(body):
 			Signals.emit_signal("p2Jump")
 			
 	
-	
+	if randItem == 0:
+		if body.name == "Player1":
+			Signals.emit_signal("p1Shild")
+		elif body.name == "Player2":
+			Signals.emit_signal("p2Shild")
+			
 	
 	if body.name == "Player1" || "Player2":
 		queue_free()

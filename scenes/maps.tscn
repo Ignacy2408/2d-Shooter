@@ -43,6 +43,7 @@ weapon_tscn = ExtResource("7_j5a0p")
 [node name="Player1" parent="Player1Spawner" instance=ExtResource("6_dyrc4")]
 texture_filter = 1
 position = Vector2(650, -60)
+changeSpeed = null
 
 [node name="SpeedItemP1" type="Timer" parent="Player1Spawner/Player1"]
 one_shot = true

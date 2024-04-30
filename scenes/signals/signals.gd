@@ -9,3 +9,5 @@ signal p1Speed
 signal p2Speed
 signal p1Jump
 signal p2Jump
+signal p1Shild
+signal p2Shild

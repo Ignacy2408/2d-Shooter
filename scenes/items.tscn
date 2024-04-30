@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6d57d1fp3woc"]
+
+[ext_resource type="Script" path="res://Items.gd" id="1_1qasm"]
+[ext_resource type="Texture2D" uid="uid://dpsjsgusu25q2" path="res://guns_gameassets/PNG/large_bullet.png" id="2_thfw1"]
+[ext_resource type="Texture2D" uid="uid://c341fhqfs4aa8" path="res://guns_gameassets/PNG/medium_bullet.png" id="3_4qrwu"]
+[ext_resource type="Texture2D" uid="uid://cvh7opx1rpxu1" path="res://guns_gameassets/PNG/magazine2.png" id="4_nb7nu"]
+[ext_resource type="Texture2D" uid="uid://dblyg37tfg0k5" path="res://guns_gameassets/PNG/medium_bullet2.png" id="5_0fy11"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3len"]
+
+[node name="Items" type="Area2D"]
+script = ExtResource("1_1qasm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p3len")
+
+[node name="Shild" type="Sprite2D" parent="CollisionShape2D"]
+visible = false
+position = Vector2(4.76837e-07, 0.25)
+scale = Vector2(1.42857, 0.277027)
+texture = ExtResource("2_thfw1")
+
+[node name="Speed" type="Sprite2D" parent="CollisionShape2D"]
+visible = false
+scale = Vector2(1, 0.344828)
+texture = ExtResource("3_4qrwu")
+
+[node name="Heart" type="Sprite2D" parent="CollisionShape2D"]
+visible = false
+position = Vector2(4.76837e-07, 9.53674e-07)
+scale = Vector2(0.425532, 0.25974)
+texture = ExtResource("4_nb7nu")
+
+[node name="jump" type="Sprite2D" parent="CollisionShape2D"]
+visible = false
+position = Vector2(2.38419e-07, 0)
+scale = Vector2(1.42857, 0.30303)
+texture = ExtResource("5_0fy11")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

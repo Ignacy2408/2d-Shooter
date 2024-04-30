@@ -15,6 +15,8 @@ func _on_gun_box_body_entered(body):
 
 
 func _process(_delta):
+	
+	
 	#P1
 	var new_player1 = player1_tscn.instantiate()
 	if (GameState.p1alive == false && GameState.p1lives > 0):

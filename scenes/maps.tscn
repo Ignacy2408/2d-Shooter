@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://deuv5ay7440ah"]
+[gd_scene load_steps=19 format=3 uid="uid://deuv5ay7440ah"]
 
 [ext_resource type="Script" path="res://scenes/maps.gd" id="1_26c4c"]
 [ext_resource type="Script" path="res://scenes/Player1Spawner.gd" id="1_mbtdp"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" path="res://scenes/p2LivesLabelLabel2.gd" id="10_0oomh"]
 [ext_resource type="Script" path="res://scenes/Label.gd" id="11_ihox3"]
 [ext_resource type="PackedScene" uid="uid://m4rcbscskg10" path="res://scenes/in_game_menu.tscn" id="12_b5j4c"]
+[ext_resource type="Script" path="res://scenes/ItemBoxSpawner.gd" id="13_e0jkl"]
+[ext_resource type="PackedScene" uid="uid://c6d57d1fp3woc" path="res://scenes/items.tscn" id="14_tj1nq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1w4at"]
 font_size = 23
@@ -42,6 +44,11 @@ weapon_tscn = ExtResource("7_j5a0p")
 texture_filter = 1
 position = Vector2(650, -60)
 
+[node name="SpeedItemP1" type="Timer" parent="Player1Spawner/Player1"]
+one_shot = true
+
+[node name="JumpItemP1" type="Timer" parent="Player1Spawner/Player1"]
+
 [node name="Player2Spawner" type="Node2D" parent="."]
 position = Vector2(0, 2)
 script = ExtResource("5_qdsl0")
@@ -50,6 +57,11 @@ weapon_tscn = ExtResource("7_j5a0p")
 
 [node name="Player2" parent="Player2Spawner" instance=ExtResource("8_rq4or")]
 position = Vector2(500, -60)
+
+[node name="SpeedItemP2" type="Timer" parent="Player2Spawner/Player2"]
+one_shot = true
+
+[node name="JumpItemP2" type="Timer" parent="Player2Spawner/Player2"]
 
 [node name="BoxSpawner" type="Node2D" parent="."]
 script = ExtResource("6_t5s77")
@@ -129,8 +141,21 @@ label_settings = SubResource("LabelSettings_08u8k")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ItemBoxSpawner" type="Node2D" parent="."]
+script = ExtResource("13_e0jkl")
+
+[node name="ItemBoxTimer" type="Timer" parent="ItemBoxSpawner"]
+
+[node name="Items" parent="." instance=ExtResource("14_tj1nq")]
+
+[connection signal="timeout" from="Player1Spawner/Player1/SpeedItemP1" to="Player1Spawner/Player1" method="_on_speed_item_p_1_timeout"]
+[connection signal="timeout" from="Player1Spawner/Player1/JumpItemP1" to="Player1Spawner/Player1" method="_on_jump_item_p_1_timeout"]
+[connection signal="timeout" from="Player2Spawner/Player2/SpeedItemP2" to="Player2Spawner/Player2" method="_on_speed_item_p_2_timeout"]
+[connection signal="timeout" from="Player2Spawner/Player2/JumpItemP2" to="Player2Spawner/Player2" method="_on_jump_item_p_2_timeout"]
 [connection signal="timeout" from="BoxSpawner/BoxSpawnTimer" to="BoxSpawner" method="_on_box_spawn_timer_timeout"]
 [connection signal="body_entered" from="GunBox" to="Player1Spawner" method="_on_gun_box_body_entered"]
 [connection signal="body_entered" from="GunBox" to="Player2Spawner" method="_on_gun_box_body_entered"]
 [connection signal="body_entered" from="GunBox" to="GunSniper" method="_on_gun_box_body_entered"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
+[connection signal="timeout" from="ItemBoxSpawner/ItemBoxTimer" to="ItemBoxSpawner" method="_on_item_box_timer_timeout"]
+[connection signal="timeout" from="ItemBoxSpawner/ItemBoxTimer" to="Items" method="_on_item_box_timer_timeout"]

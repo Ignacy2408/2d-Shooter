@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 400.0
+var SPEED = 400.0
 const JUMP_VELOCITY = -750.0
 @onready var sprite_2d = $Frog_Character
 @export var changeSpeed = 150
@@ -9,6 +9,8 @@ var alive = true;
 var current_weapon: Node2D
 var recieves_knockback = false
 var second_jump = false
+var third_jump = false
+var jump_item = false
 var knockback = 0
 var knockback_direction = 1
 #@onready var weapons: Node2D = get_node("Weapons/Sniper")
@@ -21,8 +23,28 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	$KnockbackTimer.wait_time = 0.5
+	
+	$SpeedItemP1.wait_time = 3
+	$JumpItemP1.wait_time = 10
+	
+	Signals.connect("p1Speed", p1Speed)
+	Signals.connect("p1Jump", p1Jump)
+	
+
+func p1Speed():
+	
+	$SpeedItemP1.start()
+	SPEED = 800
+
+func p1Jump():
+	jump_item = true
+	third_jump = true
+	$JumpItemP1.start()
+
 func _physics_process(delta):
 	
+	
+	 
 	#Animaitons
 	
 	if (velocity.x > 1 || velocity.x < -1):
@@ -37,11 +59,17 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("p1Jump") && second_jump == true:
 			velocity.y = JUMP_VELOCITY
 			second_jump = false
+		elif Input.is_action_just_pressed("p1Jump") && third_jump == true:
+			velocity.y = JUMP_VELOCITY
+			third_jump = false
+		
 
 	# Handle jump.
 	if Input.is_action_just_pressed("p1Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		second_jump = true
+		if jump_item == true:
+			third_jump = true
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -63,6 +91,11 @@ func _physics_process(delta):
 		
 		
 func _process(delta):
+	
+	
+	
+	
+	
 	
 	GameState.p1PosX = self.position.x
 	GameState.p1PosY = self.position.y
@@ -101,4 +134,14 @@ func recieve_knockback(direction: int ,knockback_strength: int):
 
 func _on_knockback_timer_timeout():
 	recieves_knockback = false
+	
+
+
+func _on_speed_item_p_1_timeout():
+	SPEED = 400
+
+
+func _on_jump_item_p_1_timeout():
+	jump_item = false
+	third_jump = false
 	

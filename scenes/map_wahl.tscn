@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://grm2it2ky6ac"]
 
 [ext_resource type="Script" path="res://scenes/map_wahl.gd" id="1_3145k"]
-[ext_resource type="Texture2D" uid="uid://7mwuqbi3ykln" path="res://Free/Background/Green.png" id="1_b4agg"]
+[ext_resource type="Texture2D" uid="uid://d0ncnt2a4jgvm" path="res://backgrounds/sky1.png" id="2_t3ffx"]
 [ext_resource type="Texture2D" uid="uid://domlxt25lq2jd" path="res://Map Bilder/Map1.png" id="2_vqkfi"]
 [ext_resource type="Texture2D" uid="uid://coem2e0bgh1d8" path="res://Map Bilder/Map2.png" id="3_ffm4h"]
 [ext_resource type="Texture2D" uid="uid://dk8u1hublbxc6" path="res://Map Bilder/Screenshot 2024-04-17 at 10.18.07.png" id="5_e5eqe"]
@@ -12,15 +12,9 @@ script = ExtResource("1_3145k")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -2.0
-offset_right = 1148.0
-offset_bottom = 643.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_b4agg")
+offset_right = 1920.0
+offset_bottom = 1200.0
+texture = ExtResource("2_t3ffx")
 stretch_mode = 1
 metadata/_edit_lock_ = true
 

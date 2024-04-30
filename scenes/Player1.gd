@@ -125,7 +125,7 @@ func _process(delta):
 		if shild == true:
 			position.x += knockback * delta * 0.75
 		else:
-			wposition.x += knockback * delta
+			position.x += knockback * delta
 		knockback -= 20 * knockback_direction
 		
 	

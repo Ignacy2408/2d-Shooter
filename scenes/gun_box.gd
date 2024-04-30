@@ -26,7 +26,6 @@ func _on_body_entered(body):
 
 	if body.name == "Player2":
 		GameState.p2entered = true
-		GameState.p2HasGun = true
 		GameState.p2NeedsGun = true
 		queue_free()
 

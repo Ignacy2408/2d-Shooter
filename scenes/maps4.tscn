@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://p5xlqd3ni4wr"]
+[gd_scene load_steps=17 format=3 uid="uid://p5xlqd3ni4wr"]
 
 [ext_resource type="PackedScene" uid="uid://6qxhbj2ey742" path="res://scenes/map_4.tscn" id="1_jrs82"]
 [ext_resource type="Script" path="res://scenes/maps4.gd" id="1_lqwrj"]
@@ -19,6 +19,14 @@ font_size = 23
 [sub_resource type="LabelSettings" id="LabelSettings_6j7yw"]
 font_size = 23
 
+[sub_resource type="LabelSettings" id="LabelSettings_5lr72"]
+font_size = 80
+outline_size = 8
+shadow_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_iieis"]
+font_size = 48
+
 [node name="maps4" type="Node2D"]
 script = ExtResource("1_lqwrj")
 
@@ -37,12 +45,15 @@ position = Vector2(650, -60)
 position = Vector2(0, 2)
 script = ExtResource("5_r0ry2")
 player2_tscn = ExtResource("6_rbvoq")
+weapon_tscn = ExtResource("4_ktlyv")
 
 [node name="Player2" parent="Player2Spawner" instance=ExtResource("6_rbvoq")]
 position = Vector2(500, -60)
 
 [node name="BoxSpawner" type="Node2D" parent="."]
 script = ExtResource("7_meqnh")
+
+[node name="BoxSpawnTimer" type="Timer" parent="BoxSpawner"]
 
 [node name="p1LivesLabel" type="Label" parent="."]
 texture_filter = 1
@@ -78,3 +89,41 @@ position = Vector2(1028, 171)
 
 [node name="inGameMenu" parent="GUI" instance=ExtResource("11_fd4jk")]
 visible = false
+
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="GameOverLabel" type="Label" parent="."]
+visible = false
+offset_left = 280.0
+offset_top = -36.0
+offset_right = 860.0
+offset_bottom = 280.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_5lr72")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p1Wins" type="Label" parent="."]
+visible = false
+offset_left = 417.0
+offset_top = 403.0
+offset_right = 738.0
+offset_bottom = 470.0
+text = "Player 1 Wins!"
+label_settings = SubResource("LabelSettings_iieis")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p2Wins" type="Label" parent="."]
+visible = false
+offset_left = 417.0
+offset_top = 403.0
+offset_right = 738.0
+offset_bottom = 470.0
+text = "Player 2 Wins!"
+label_settings = SubResource("LabelSettings_iieis")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="BoxSpawner/BoxSpawnTimer" to="BoxSpawner" method="_on_box_spawn_timer_timeout"]

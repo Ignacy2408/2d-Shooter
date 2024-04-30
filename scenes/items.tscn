@@ -1,39 +1,42 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6d57d1fp3woc"]
 
 [ext_resource type="Script" path="res://Items.gd" id="1_1qasm"]
-[ext_resource type="Texture2D" uid="uid://d4dm0oj4lvww6" path="res://guns_gameassets/PNG/shotgun.png" id="2_4a7no"]
-[ext_resource type="Texture2D" uid="uid://c341fhqfs4aa8" path="res://guns_gameassets/PNG/medium_bullet.png" id="3_4qrwu"]
-[ext_resource type="Texture2D" uid="uid://cvh7opx1rpxu1" path="res://guns_gameassets/PNG/magazine2.png" id="4_nb7nu"]
-[ext_resource type="Texture2D" uid="uid://dblyg37tfg0k5" path="res://guns_gameassets/PNG/medium_bullet2.png" id="5_0fy11"]
+[ext_resource type="Texture2D" uid="uid://bnga84q2ie4ma" path="res://Free/Items/Items Icons/shield.png" id="2_12rih"]
+[ext_resource type="Texture2D" uid="uid://dad0nmyk7usou" path="res://Free/Items/Items Icons/next.png" id="3_7y0hv"]
+[ext_resource type="Texture2D" uid="uid://kjpvgoybx0hx" path="res://Free/Items/Items Icons/heart pixel art/heart pixel art 254x254.png" id="4_454og"]
+[ext_resource type="Texture2D" uid="uid://cu1b3e30wuonh" path="res://Free/Items/Items Icons/jump.png" id="5_5l3h8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3len"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_u0cfe"]
+radius = 20.0
 
 [node name="Items" type="Area2D"]
 script = ExtResource("1_1qasm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_p3len")
+shape = SubResource("CircleShape2D_u0cfe")
 
 [node name="Shild" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(0, 0.5)
-scale = Vector2(0.0496278, 0.181034)
-texture = ExtResource("2_4a7no")
+visible = false
+position = Vector2(-1.84774e-06, 0.499999)
+scale = Vector2(0.156134, 0.159851)
+texture = ExtResource("2_12rih")
 
 [node name="Speed" type="Sprite2D" parent="CollisionShape2D"]
 visible = false
-scale = Vector2(1, 0.344828)
-texture = ExtResource("3_4qrwu")
+position = Vector2(2.75, 0)
+scale = Vector2(0.0751953, 0.0941476)
+texture = ExtResource("3_7y0hv")
 
 [node name="Heart" type="Sprite2D" parent="CollisionShape2D"]
 visible = false
-position = Vector2(4.76837e-07, 9.53674e-07)
-scale = Vector2(0.425532, 0.25974)
-texture = ExtResource("4_nb7nu")
+position = Vector2(9.53674e-07, 1.5)
+scale = Vector2(0.15748, 0.161417)
+texture = ExtResource("4_454og")
 
 [node name="jump" type="Sprite2D" parent="CollisionShape2D"]
 visible = false
-position = Vector2(2.38419e-07, 0)
-scale = Vector2(1.42857, 0.30303)
-texture = ExtResource("5_0fy11")
+position = Vector2(0, -2)
+scale = Vector2(0.0800781, 0.0854492)
+texture = ExtResource("5_5l3h8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

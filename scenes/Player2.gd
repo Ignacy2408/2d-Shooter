@@ -12,6 +12,7 @@ var knockback = 0
 var second_jump = false
 var third_jump = false
 var jump_item = false
+var shild = false
 var knockback_direction = 1
 
 #@onready var weapons: Node2D = get_node("Weapons/Sniper")
@@ -78,22 +79,28 @@ func _physics_process(delta):
 func _ready():
 	$KnockbackTimer2.wait_time = 0.5
 	
-	$SpeedItemP2.wait_time = 3
-	$JumpItemP2.wait_time = 10
+	$SpeedItem.wait_time = 3
+	$JumpItem.wait_time = 10
+	$Shild.wait_time = 10
 	
 	Signals.connect("p2Speed", p2Speed)
 	Signals.connect("p2Jump", p2Jump)
+	Signals.connect("p2Shild", p2Shild)
 
 func p2Speed():
-	$SpeedItemP2.start()
+	$SpeedItem.start()
 	SPEED = 800
 	
 
 func p2Jump():
 	jump_item = true
 	third_jump = true
-	$JumpItemP2.start()
+	$JumpItem.start()
 
+func p2Shild():
+	shild = true
+	$Shild.start()
+	$Sprite2D.visible = true
 
 func _process(delta):
 	
@@ -119,7 +126,10 @@ func _process(delta):
 		
 	if recieves_knockback == true:
 	
-		position.x += knockback * delta
+		if shild == true:
+			position.x += knockback * delta * 0.75
+		else:
+			position.x += knockback * delta
 		knockback -= 20 * knockback_direction
 		
 		
@@ -127,7 +137,10 @@ func recieve_knockback(direction: int ,knockback_strength: int ):
 	
 	knockback_direction = direction
 	print(direction)
-	knockback = knockback_direction * knockback_strength
+	if shild == true:
+		knockback = knockback_direction * knockback_strength * 0.75
+	else:
+		knockback = knockback_direction * knockback_strength
 	recieves_knockback = true
 	print(recieves_knockback)
 	$KnockbackTimer2.start()
@@ -146,3 +159,8 @@ func _on_speed_item_p_2_timeout():
 func _on_jump_item_p_2_timeout():
 	jump_item = false
 	third_jump = false
+
+
+func _on_shild_timeout():
+	shild = false
+	$Sprite2D.visible = false

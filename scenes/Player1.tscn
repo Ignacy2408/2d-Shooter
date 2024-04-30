@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://dokq2dxwaavcg"]
+[gd_scene load_steps=31 format=3 uid="uid://dokq2dxwaavcg"]
 
 [ext_resource type="Script" path="res://scenes/Player1.gd" id="1_c7lcq"]
 [ext_resource type="Texture2D" uid="uid://dhy82dvfw83l8" path="res://Free/Main Characters/Ninja Frog/Jump (32x32).png" id="1_wkkt0"]
 [ext_resource type="Texture2D" uid="uid://bntafk5vusu3k" path="res://Free/Main Characters/Ninja Frog/Idle (32x32).png" id="2_o0f77"]
 [ext_resource type="Texture2D" uid="uid://crjc8wneqmvcs" path="res://Free/Main Characters/Ninja Frog/Run (32x32).png" id="4_5au7l"]
+[ext_resource type="Texture2D" uid="uid://bnga84q2ie4ma" path="res://Free/Items/Items Icons/shield.png" id="5_6pbar"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36yqe"]
 atlas = ExtResource("2_o0f77")
@@ -192,7 +193,6 @@ size = Vector2(37, 48)
 
 [node name="Player1" type="CharacterBody2D"]
 script = ExtResource("1_c7lcq")
-changeSpeed = null
 metadata/_edit_group_ = true
 
 [node name="Frog_Character" type="AnimatedSprite2D" parent="."]
@@ -212,5 +212,18 @@ wait_time = 1.41
 
 [node name="Shild" type="Timer" parent="."]
 
+[node name="SpeedItem" type="Timer" parent="."]
+one_shot = true
+
+[node name="JumpItem" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 1)
+scale = Vector2(0.223048, 0.226766)
+texture = ExtResource("5_6pbar")
+
 [connection signal="timeout" from="KnockbackTimer" to="." method="_on_knockback_timer_timeout"]
 [connection signal="timeout" from="Shild" to="." method="_on_shild_timeout"]
+[connection signal="timeout" from="SpeedItem" to="." method="_on_speed_item_p_1_timeout"]
+[connection signal="timeout" from="JumpItem" to="." method="_on_jump_item_p_1_timeout"]

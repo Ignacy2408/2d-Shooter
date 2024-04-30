@@ -25,8 +25,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	$KnockbackTimer.wait_time = 0.5
 	
-	$SpeedItemP1.wait_time = 3
-	$JumpItemP1.wait_time = 10
+	$SpeedItem.wait_time = 3
+	$JumpItem.wait_time = 10
 	$Shild.wait_time = 10
 	
 	Signals.connect("p1Speed", p1Speed)
@@ -36,16 +36,17 @@ func _ready():
 
 func p1Speed():
 	SPEED = 800
-	$SpeedItemP1.start()
+	$SpeedItem.start()
 
 func p1Jump():
 	jump_item = true
 	third_jump = true
-	$JumpItemP1.start()
+	$JumpItem.start()
 
 func p1Shild():
 	shild = true
 	$Shild.start()
+	$Sprite2D.visible = true
 
 func _physics_process(delta):
 	
@@ -156,8 +157,8 @@ func _on_speed_item_p_1_timeout():
 func _on_jump_item_p_1_timeout():
 	jump_item = false
 	third_jump = false
-	
 
 
 func _on_shild_timeout():
 	shild = false
+	$Sprite2D.visible = false

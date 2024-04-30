@@ -1,8 +1,8 @@
 extends Node2D
 
 const ItemboxPath = preload('res://scenes/items.tscn')
-@export var underBoundry = 2
-@export var upperBoundry = 8
+@export var underBoundry = 10
+@export var upperBoundry = 20
 
 var randTimeSpawn = randi()%(upperBoundry-(underBoundry-1))+ underBoundry
 var randPos = randi()%(3-(0-1))+0
@@ -44,26 +44,26 @@ func _on_item_box_timer_timeout():
 	
 	
 	if randPos == 0 && GameState.ItemBox0Free:
-		Itembox.position.x = 269
-		Itembox.position.y = 125
+		Itembox.position.x = 400
+		Itembox.position.y = 360
 		Itembox.thisBox = "ItemPos0"
 		GameState.ItemBox0Free = false
 		print("ItemPos0")
 	elif randPos == 1 && GameState.ItemBox1Free:
-		Itembox.position.x = 1078
-		Itembox.position.y = 125
+		Itembox.position.x = 760
+		Itembox.position.y = 360
 		Itembox.thisBox = "ItemPos1"
 		GameState.ItemBox1Free = false
 		print("ItemPos1")
 	elif randPos == 2 && GameState.ItemBox2Free:
-		Itembox.position.x = 295
-		Itembox.position.y = 460
+		Itembox.position.x = 1050
+		Itembox.position.y = 120
 		Itembox.thisBox = "ItemPos2"
 		GameState.ItemBox2Free = false
 		print("ItemPos2")
 	elif randPos == 3 && GameState.ItemBox3Free:
-		Itembox.position.x = 1059
-		Itembox.position.y = 460
+		Itembox.position.x = 100
+		Itembox.position.y = 120
 		Itembox.thisBox = "ItemPos3"
 		GameState.ItemBox3Free = false
 		print("ItemPos3")

@@ -17,24 +17,28 @@ shape = SubResource("CircleShape2D_u0cfe")
 
 [node name="Shild" type="Sprite2D" parent="CollisionShape2D"]
 visible = false
+texture_filter = 1
 position = Vector2(-1.84774e-06, 0.499999)
 scale = Vector2(0.156134, 0.159851)
 texture = ExtResource("2_12rih")
 
 [node name="Speed" type="Sprite2D" parent="CollisionShape2D"]
 visible = false
+texture_filter = 1
 position = Vector2(2.75, 0)
 scale = Vector2(0.0751953, 0.0941476)
 texture = ExtResource("3_7y0hv")
 
 [node name="Heart" type="Sprite2D" parent="CollisionShape2D"]
 visible = false
+texture_filter = 1
 position = Vector2(9.53674e-07, 1.5)
 scale = Vector2(0.15748, 0.161417)
 texture = ExtResource("4_454og")
 
 [node name="jump" type="Sprite2D" parent="CollisionShape2D"]
 visible = false
+texture_filter = 1
 position = Vector2(0, -2)
 scale = Vector2(0.0800781, 0.0854492)
 texture = ExtResource("5_5l3h8")

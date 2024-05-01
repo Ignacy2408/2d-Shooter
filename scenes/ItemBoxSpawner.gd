@@ -51,9 +51,11 @@ func _on_item_box_timer_timeout():
 			Itembox.position.x = 165
 			Itembox.position.y = 405
 		elif GameState.m3 == true:
-			pass
+			Itembox.position.x = 215
+			Itembox.position.y = 505
 		elif GameState.m4 == true:
-			pass
+			Itembox.position.x = 90
+			Itembox.position.y = 165
 		
 		Itembox.thisBox = "ItemPos0"
 		GameState.ItemBox0Free = false
@@ -66,9 +68,11 @@ func _on_item_box_timer_timeout():
 			Itembox.position.x = 575
 			Itembox.position.y = 120
 		elif GameState.m3 == true:
-			pass
+			Itembox.position.x = 935
+			Itembox.position.y = 505
 		elif GameState.m4 == true:
-			pass
+			Itembox.position.x = 1065
+			Itembox.position.y = 165
 		
 		Itembox.thisBox = "ItemPos1"
 		GameState.ItemBox1Free = false
@@ -81,9 +85,11 @@ func _on_item_box_timer_timeout():
 			Itembox.position.x = 575
 			Itembox.position.y = 310
 		elif GameState.m3 == true:
-			pass
+			Itembox.position.x = 715
+			Itembox.position.y = 165
 		elif GameState.m4 == true:
-			pass
+			Itembox.position.x = 915
+			Itembox.position.y = 455
 		
 		Itembox.thisBox = "ItemPos2"
 		GameState.ItemBox2Free = false
@@ -96,9 +102,11 @@ func _on_item_box_timer_timeout():
 			Itembox.position.x = 990
 			Itembox.position.y = 405
 		elif GameState.m3 == true:
-			pass
+			Itembox.position.x = 430
+			Itembox.position.y = 165
 		elif GameState.m4 == true:
-			pass
+			Itembox.position.x = 235
+			Itembox.position.y = 455
 		
 		Itembox.thisBox = "ItemPos3"
 		GameState.ItemBox3Free = false

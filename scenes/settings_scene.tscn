@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bobrrijjlgdh" path="res://scenes/settings.tscn" id="1_imiro"]
 [ext_resource type="Script" path="res://scenes/settings_scene.gd" id="1_pg23q"]
-[ext_resource type="Texture2D" uid="uid://7mwuqbi3ykln" path="res://Free/Background/Green.png" id="1_tk4dm"]
+[ext_resource type="Texture2D" uid="uid://d0ncnt2a4jgvm" path="res://backgrounds/sky1.png" id="2_72w4k"]
 
 [node name="settingsScene" type="Node2D"]
 script = ExtResource("1_pg23q")
@@ -12,15 +12,12 @@ texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 1.0
-offset_right = 1173.0
-offset_bottom = 691.0
+offset_right = 1169.0
+offset_bottom = 663.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_tk4dm")
-stretch_mode = 1
-metadata/_edit_lock_ = true
+texture = ExtResource("2_72w4k")
+expand_mode = 1
 
 [node name="GUI" type="CanvasLayer" parent="TextureRect"]
 

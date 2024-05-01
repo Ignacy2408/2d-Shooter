@@ -79,14 +79,16 @@ label_settings = SubResource("LabelSettings_6j7yw")
 script = ExtResource("9_m22sg")
 
 [node name="GunBox" parent="." instance=ExtResource("10_su810")]
-position = Vector2(132, 168)
+visible = false
+position = Vector2(360, 551)
 
 [node name="GunSniper" parent="." instance=ExtResource("4_ktlyv")]
 visible = false
 position = Vector2(409, 352)
 
 [node name="GunBox2" parent="." instance=ExtResource("10_su810")]
-position = Vector2(1028, 171)
+visible = false
+position = Vector2(799, 555)
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -135,7 +137,7 @@ script = ExtResource("13_an6uv")
 [node name="ItemBoxTimer" type="Timer" parent="ItemBoxSpawner"]
 
 [node name="Items" parent="." instance=ExtResource("14_6oi7e")]
-position = Vector2(-39, -35)
+position = Vector2(235, 454)
 
 [node name="itemAnzeige" parent="." instance=ExtResource("15_bwu78")]
 position = Vector2(264, 28)

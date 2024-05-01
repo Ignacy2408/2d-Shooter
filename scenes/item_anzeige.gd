@@ -78,7 +78,14 @@ func p2ShildOver():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if GameState.p1alive == false:
+		p1JumpOver()
+		p1SpeedOver()
+		p1ShildOver()
+	if GameState.p2alive == false:
+		p2JumpOver()
+		p2SpeedOver()
+		p2ShildOver()
 
 
 func _on_heart_visible_timeout():

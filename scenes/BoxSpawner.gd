@@ -45,26 +45,58 @@ func _on_box_spawn_timer_timeout():
 	
 	
 	if randPos == 0 && GameState.Box0Free:
-		box.position.x = 169
-		box.position.y = 125
+		if GameState.m1 == true:
+			box.position.x = 169
+			box.position.y = 125
+		elif GameState.m2 == true:
+			pass
+		elif GameState.m3 == true:
+			pass
+		elif GameState.m4 == true:
+			pass
+		
 		box.thisBox = "Pos0"
 		GameState.Box0Free = false
 		print("Pos0")
 	elif randPos == 1 && GameState.Box1Free:
-		box.position.x = 978
-		box.position.y = 125
+		if GameState.m1 == true:
+			box.position.x = 978
+			box.position.y = 125
+		elif GameState.m2 == true:
+			pass
+		elif GameState.m3 == true:
+			pass
+		elif GameState.m4 == true:
+			pass
+		
 		box.thisBox = "Pos1"
 		GameState.Box1Free = false
 		print("Pos1")
 	elif randPos == 2 && GameState.Box2Free:
-		box.position.x = 195
-		box.position.y = 460
+		if GameState.m1 == true:
+			box.position.x = 195
+			box.position.y = 460
+		elif GameState.m2 == true:
+			pass
+		elif GameState.m3 == true:
+			pass
+		elif GameState.m4 == true:
+			pass
+		
 		box.thisBox = "Pos2"
 		GameState.Box2Free = false
 		print("Pos2")
 	elif randPos == 3 && GameState.Box3Free:
-		box.position.x = 959
-		box.position.y = 460
+		if GameState.m1 == true:
+			box.position.x = 959
+			box.position.y = 460
+		elif GameState.m2 == true:
+			pass
+		elif GameState.m3 == true:
+			pass
+		elif GameState.m4 == true:
+			pass
+		
 		box.thisBox = "Pos3"
 		GameState.Box3Free = false
 		print("Pos3")

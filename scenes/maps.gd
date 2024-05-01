@@ -53,5 +53,6 @@ func _on_game_over_timer_timeout():
 	$p1Wins.visible = false
 	$p2Wins.visible = false
 	
+	
 
 

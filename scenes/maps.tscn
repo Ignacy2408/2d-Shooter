@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://deuv5ay7440ah"]
+[gd_scene load_steps=20 format=3 uid="uid://deuv5ay7440ah"]
 
 [ext_resource type="Script" path="res://scenes/maps.gd" id="1_26c4c"]
 [ext_resource type="Script" path="res://scenes/Player1Spawner.gd" id="1_mbtdp"]
@@ -14,10 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://m4rcbscskg10" path="res://scenes/in_game_menu.tscn" id="12_b5j4c"]
 [ext_resource type="Script" path="res://scenes/ItemBoxSpawner.gd" id="13_e0jkl"]
 [ext_resource type="PackedScene" uid="uid://c6d57d1fp3woc" path="res://scenes/items.tscn" id="14_tj1nq"]
-[ext_resource type="Texture2D" uid="uid://dad0nmyk7usou" path="res://Free/Items/Items Icons/next.png" id="15_13fc1"]
-[ext_resource type="Texture2D" uid="uid://kjpvgoybx0hx" path="res://Free/Items/Items Icons/heart pixel art/heart pixel art 254x254.png" id="16_auhj4"]
-[ext_resource type="Texture2D" uid="uid://bnga84q2ie4ma" path="res://Free/Items/Items Icons/shield.png" id="17_3jkkp"]
-[ext_resource type="Texture2D" uid="uid://cu1b3e30wuonh" path="res://Free/Items/Items Icons/jump.png" id="18_k86j0"]
+[ext_resource type="PackedScene" uid="uid://cashsm4715qst" path="res://scenes/item_anzeige.tscn" id="15_fidh5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1w4at"]
 font_size = 23
@@ -143,35 +140,8 @@ script = ExtResource("13_e0jkl")
 [node name="Items" parent="." instance=ExtResource("14_tj1nq")]
 position = Vector2(-39, -35)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = 186.0
-offset_top = 10.0
-offset_right = 354.0
-offset_bottom = 49.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_stretch_ratio = 0.0
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("15_13fc1")
-expand_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("16_auhj4")
-expand_mode = 2
-
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("17_3jkkp")
-expand_mode = 2
-
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("18_k86j0")
-expand_mode = 2
+[node name="itemAnzeige" parent="." instance=ExtResource("15_fidh5")]
+position = Vector2(264, 28)
 
 [connection signal="timeout" from="BoxSpawner/BoxSpawnTimer" to="BoxSpawner" method="_on_box_spawn_timer_timeout"]
 [connection signal="body_entered" from="GunBox" to="Player1Spawner" method="_on_gun_box_body_entered"]

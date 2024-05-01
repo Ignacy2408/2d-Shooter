@@ -152,13 +152,16 @@ func _on_knockback_timer_timeout():
 
 func _on_speed_item_p_1_timeout():
 	SPEED = 400
+	Signals.emit_signal("p1SpeedOver")
 
 
 func _on_jump_item_p_1_timeout():
 	jump_item = false
 	third_jump = false
+	Signals.emit_signal("p1JumpOver")
 
 
 func _on_shild_timeout():
 	shild = false
 	$Sprite2D.visible = false
+	Signals.emit_signal("p1ShildOver")

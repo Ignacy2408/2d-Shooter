@@ -32,6 +32,10 @@ var Item = null
 var p1SpeedItem = false
 var p2SpeedItem = false
 
+var m1 = false
+var m2 = false
+var m3 = false
+var m4 = false
 
 var p1NeedsGun = false
 var p2NeedsGun = false
@@ -55,3 +59,7 @@ func start_over():
 	p1Winner = false
 	p2Winner = false
 	gameState = 1
+	m1 = false
+	m2 = false
+	m3 = false
+	m4 = false

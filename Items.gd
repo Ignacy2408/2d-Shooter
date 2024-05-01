@@ -52,7 +52,9 @@ func _on_body_entered(body):
 	if randItem == 2:
 		if body.name == "Player1":
 			GameState.p1lives += 1
+			Signals.emit_signal("p1Heart")
 		elif body.name == "Player2":
+			Signals.emit_signal("p2Heart")
 			GameState.p2lives += 1
 
 	print("Item aufgesammelt")

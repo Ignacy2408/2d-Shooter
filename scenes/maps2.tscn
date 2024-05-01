@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cdqs007oolwps"]
+[gd_scene load_steps=20 format=3 uid="uid://cdqs007oolwps"]
 
 [ext_resource type="Script" path="res://scenes/maps2.gd" id="1_uuti8"]
 [ext_resource type="PackedScene" uid="uid://dryk8qdc3aruf" path="res://scenes/map_2.tscn" id="2_d6qam"]
@@ -12,6 +12,9 @@
 [ext_resource type="Script" path="res://scenes/p2LivesLabelLabel2.gd" id="10_c5jqe"]
 [ext_resource type="PackedScene" uid="uid://bbqc3a87e7k5h" path="res://scenes/gun_box.tscn" id="11_rh4dm"]
 [ext_resource type="PackedScene" uid="uid://m4rcbscskg10" path="res://scenes/in_game_menu.tscn" id="12_bh1yq"]
+[ext_resource type="Script" path="res://scenes/ItemBoxSpawner.gd" id="13_an8k3"]
+[ext_resource type="PackedScene" uid="uid://c6d57d1fp3woc" path="res://scenes/items.tscn" id="14_m5r3d"]
+[ext_resource type="PackedScene" uid="uid://cashsm4715qst" path="res://scenes/item_anzeige.tscn" id="15_r6476"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r7nt1"]
 font_size = 23
@@ -126,5 +129,17 @@ label_settings = SubResource("LabelSettings_0551l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ItemBoxSpawner" type="Node2D" parent="."]
+script = ExtResource("13_an8k3")
+
+[node name="ItemBoxTimer" type="Timer" parent="ItemBoxSpawner"]
+
+[node name="Items" parent="." instance=ExtResource("14_m5r3d")]
+position = Vector2(-39, -35)
+
+[node name="itemAnzeige" parent="." instance=ExtResource("15_r6476")]
+position = Vector2(264, 28)
+
 [connection signal="timeout" from="BoxSpawner/BoxSpawnTimer" to="BoxSpawner" method="_on_box_spawn_timer_timeout"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
+[connection signal="timeout" from="ItemBoxSpawner/ItemBoxTimer" to="ItemBoxSpawner" method="_on_item_box_timer_timeout"]

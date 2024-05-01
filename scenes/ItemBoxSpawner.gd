@@ -48,7 +48,8 @@ func _on_item_box_timer_timeout():
 			Itembox.position.x = 400
 			Itembox.position.y = 360
 		elif GameState.m2 == true:
-			pass
+			Itembox.position.x = 165
+			Itembox.position.y = 405
 		elif GameState.m3 == true:
 			pass
 		elif GameState.m4 == true:
@@ -62,7 +63,8 @@ func _on_item_box_timer_timeout():
 			Itembox.position.x = 760
 			Itembox.position.y = 360
 		elif GameState.m2 == true:
-			pass
+			Itembox.position.x = 575
+			Itembox.position.y = 120
 		elif GameState.m3 == true:
 			pass
 		elif GameState.m4 == true:
@@ -76,7 +78,8 @@ func _on_item_box_timer_timeout():
 			Itembox.position.x = 1050
 			Itembox.position.y = 120
 		elif GameState.m2 == true:
-			pass
+			Itembox.position.x = 575
+			Itembox.position.y = 310
 		elif GameState.m3 == true:
 			pass
 		elif GameState.m4 == true:
@@ -90,7 +93,8 @@ func _on_item_box_timer_timeout():
 			Itembox.position.x = 100
 			Itembox.position.y = 120
 		elif GameState.m2 == true:
-			pass
+			Itembox.position.x = 990
+			Itembox.position.y = 405
 		elif GameState.m3 == true:
 			pass
 		elif GameState.m4 == true:

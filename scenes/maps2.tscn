@@ -79,14 +79,16 @@ label_settings = SubResource("LabelSettings_020tb")
 script = ExtResource("10_c5jqe")
 
 [node name="GunBox" parent="." instance=ExtResource("11_rh4dm")]
-position = Vector2(127, 221)
+visible = false
+position = Vector2(745, 555)
 
 [node name="GunSniper" parent="." instance=ExtResource("5_vaea7")]
 visible = false
 position = Vector2(409, 352)
 
 [node name="GunBox2" parent="." instance=ExtResource("11_rh4dm")]
-position = Vector2(1032, 219)
+visible = false
+position = Vector2(1030, 220)
 
 [node name="GUI" type="CanvasLayer" parent="."]
 

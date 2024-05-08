@@ -12,10 +12,10 @@ script = ExtResource("1_3145k")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_right = 1920.0
-offset_bottom = 1200.0
+offset_right = 1154.0
+offset_bottom = 653.0
 texture = ExtResource("2_t3ffx")
-stretch_mode = 1
+expand_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="map1Button" type="Button" parent="TextureRect"]

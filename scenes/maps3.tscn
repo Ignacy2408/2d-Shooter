@@ -79,6 +79,7 @@ label_settings = SubResource("LabelSettings_m4fqs")
 script = ExtResource("9_cn6yb")
 
 [node name="GunBox" parent="." instance=ExtResource("10_ra31e")]
+visible = false
 position = Vector2(370, 503)
 
 [node name="GunSniper" parent="." instance=ExtResource("4_u33ve")]
@@ -86,6 +87,7 @@ visible = false
 position = Vector2(409, 352)
 
 [node name="GunBox2" parent="." instance=ExtResource("10_ra31e")]
+visible = false
 position = Vector2(792, 505)
 
 [node name="GUI" type="CanvasLayer" parent="."]
@@ -135,7 +137,7 @@ script = ExtResource("13_71272")
 [node name="ItemBoxTimer" type="Timer" parent="ItemBoxSpawner"]
 
 [node name="Items" parent="." instance=ExtResource("14_26vqc")]
-position = Vector2(-39, -35)
+position = Vector2(215, 504)
 
 [node name="itemAnzeige" parent="." instance=ExtResource("15_pvjc8")]
 position = Vector2(264, 28)

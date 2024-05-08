@@ -55,7 +55,8 @@ func _on_box_spawn_timer_timeout():
 			box.position.x = 150
 			box.position.y = 315
 		elif GameState.m4 == true:
-			pass
+			box.position.x = 260
+			box.position.y = 265
 		
 		box.thisBox = "Pos0"
 		GameState.Box0Free = false
@@ -71,7 +72,8 @@ func _on_box_spawn_timer_timeout():
 			box.position.x = 1000
 			box.position.y = 315
 		elif GameState.m4 == true:
-			pass
+			box.position.x = 890
+			box.position.y = 265
 		
 		box.thisBox = "Pos1"
 		GameState.Box1Free = false
@@ -87,7 +89,8 @@ func _on_box_spawn_timer_timeout():
 			box.position.x = 790
 			box.position.y = 505
 		elif GameState.m4 == true:
-			pass
+			box.position.x = 360
+			box.position.y = 555
 		
 		box.thisBox = "Pos2"
 		GameState.Box2Free = false
@@ -103,7 +106,8 @@ func _on_box_spawn_timer_timeout():
 			box.position.x = 370
 			box.position.y = 505
 		elif GameState.m4 == true:
-			pass
+			box.position.x = 800
+			box.position.y = 555
 		
 		box.thisBox = "Pos3"
 		GameState.Box3Free = false

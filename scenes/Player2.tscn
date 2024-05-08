@@ -223,8 +223,8 @@ position = Vector2(0, 1)
 scale = Vector2(0.223048, 0.226766)
 texture = ExtResource("5_vcrea")
 
-[connection signal="timeout" from="KnockbackTimer2" to="." method="_on_knockback_timer_timeout"]
 [connection signal="timeout" from="KnockbackTimer2" to="." method="_on_knockback_timer_2_timeout"]
+[connection signal="timeout" from="KnockbackTimer2" to="." method="_on_knockback_timer_timeout"]
 [connection signal="timeout" from="SpeedItem" to="." method="_on_speed_item_p_2_timeout"]
 [connection signal="timeout" from="JumpItem" to="." method="_on_jump_item_p_2_timeout"]
 [connection signal="timeout" from="Shild" to="." method="_on_shild_timeout"]

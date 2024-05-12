@@ -30,9 +30,7 @@ func _on_area_entered(area):
 
 
 func _on_body_entered(body):
-	if thisBullet == "Player 1":
-		#print("p1Bullet")p
-		pass
+
 	if thisBullet == "Player 1" && "Player2" in body.name:
 		
 		body.recieve_knockback(dir ,knockback_strength)

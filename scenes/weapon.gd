@@ -127,8 +127,7 @@ func _process(delta):
 			$Area2D.position.x = - XOffset * gunDirection
 		if GameState.p2alive == false:
 			queue_free()
-		if spawning == true:
-			queue_free()
+
 		
 
 

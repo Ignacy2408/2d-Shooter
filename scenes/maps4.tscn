@@ -137,7 +137,7 @@ script = ExtResource("13_an6uv")
 [node name="ItemBoxTimer" type="Timer" parent="ItemBoxSpawner"]
 
 [node name="Items" parent="." instance=ExtResource("14_6oi7e")]
-position = Vector2(235, 454)
+position = Vector2(-41, -44)
 
 [node name="itemAnzeige" parent="." instance=ExtResource("15_bwu78")]
 position = Vector2(264, 28)

@@ -3,11 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://fn5xl1wijdc2" path="res://backgrounds/parallax_forest_pack/layers/parallax-forest-back-trees.png" id="1_hdotl"]
 [ext_resource type="Texture2D" uid="uid://ck7437l343t6n" path="res://backgrounds/parallax_forest_pack/layers/parallax-forest-front-trees.png" id="2_1hlm8"]
 [ext_resource type="Texture2D" uid="uid://dady6h1cq7qeu" path="res://backgrounds/parallax_forest_pack/layers/parallax-forest-lights.png" id="2_bh6nk"]
-[ext_resource type="Texture2D" uid="uid://brn2ofsekx7ll" path="res://Free/Terrain/Terrain (16x16).png" id="3_dvwck"]
 [ext_resource type="Texture2D" uid="uid://uv14u4s5vxp2" path="res://backgrounds/parallax_forest_pack/layers/parallax-forest-middle-trees.png" id="3_wpv4m"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pilv5"]
+load_path = "res://.godot/imported/Terrain (16x16).png-dca9e7d7dba2699145ff949a79aaa365.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0i5ru"]
-texture = ExtResource("3_dvwck")
+texture = SubResource("CompressedTexture2D_pilv5")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0

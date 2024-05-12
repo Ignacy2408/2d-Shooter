@@ -25,7 +25,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	$KnockbackTimer.wait_time = 0.5
 	
-	$SpeedItem.wait_time = 3
+	$SpeedItem.wait_time = 10
 	$JumpItem.wait_time = 10
 	$Shild.wait_time = 10
 	
@@ -35,7 +35,7 @@ func _ready():
 	
 
 func p1Speed():
-	SPEED = 800
+	SPEED = 550
 	$SpeedItem.start()
 
 func p1Jump():

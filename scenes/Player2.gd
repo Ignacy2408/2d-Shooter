@@ -79,7 +79,7 @@ func _physics_process(delta):
 func _ready():
 	$KnockbackTimer2.wait_time = 0.5
 	
-	$SpeedItem.wait_time = 3
+	$SpeedItem.wait_time = 10
 	$JumpItem.wait_time = 10
 	$Shild.wait_time = 10
 	
@@ -89,7 +89,7 @@ func _ready():
 
 func p2Speed():
 	$SpeedItem.start()
-	SPEED = 800
+	SPEED = 550
 	
 
 func p2Jump():
